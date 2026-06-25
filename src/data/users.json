@@ -1,0 +1,20 @@
+[
+  {
+    "id": "u1",
+    "ad": "Furkan",
+    "soyad": "Yorulmaz",
+    "email": "furkan@root.com",
+    "password": "123456",
+    "role": "admin",
+    "paraBirimi": "TRY"
+  },
+    {
+    "id": "u2",
+    "ad": "Muhammet",
+    "soyad": "İskeçeli",
+    "email": "muhammet@root.com",
+    "password": "123456",
+    "role": "admin",
+    "paraBirimi": "TRY"
+  }
+]

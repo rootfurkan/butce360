@@ -1,0 +1,108 @@
+[
+  {
+    "id": "p1",
+    "userId": "u1",
+    "baslik": "Kira",
+    "tutar": 9000,
+    "kategori": "Kira",
+    "gunSayisi": 2,
+    "aktif": true,
+    "sonOdemeTarihi": "2024-06-02"
+  },
+  {
+    "id": "p2",
+    "userId": "u1",
+    "baslik": "Telefon Faturası",
+    "tutar": 399,
+    "kategori": "Fatura",
+    "gunSayisi": 25,
+    "aktif": true,
+    "sonOdemeTarihi": "2024-06-25"
+  },
+  {
+    "id": "p3",
+    "userId": "u1",
+    "baslik": "Elektrik Faturası",
+    "tutar": 310,
+    "kategori": "Fatura",
+    "gunSayisi": 7,
+    "aktif": true,
+    "sonOdemeTarihi": "2024-06-07",
+    "title": "Netflix Subscription",
+    "amount": 150.00,
+    "category": "Entertainment",
+    "executionDay": 10,
+    "isActive": true,
+    "dueDate": "2024-06-10"
+  },
+  {
+    "id": "p4",
+    "userId": "u1",
+    "baslik": "Su Faturası",
+    "tutar": 148,
+    "kategori": "Fatura",
+    "gunSayisi": 8,
+    "aktif": true,
+    "sonOdemeTarihi": "2024-06-08"
+  },
+  {
+    "id": "p5",
+    "userId": "u1",
+    "baslik": "Netflix",
+    "tutar": 189,
+    "kategori": "Eğlence",
+    "gunSayisi": 15,
+    "aktif": true,
+    "sonOdemeTarihi": "2024-06-15"
+  },
+  {
+    "id": "p6",
+    "userId": "u1",
+    "baslik": "Spotify",
+    "tutar": 69,
+    "kategori": "Eğlence",
+    "gunSayisi": 15,
+    "aktif": true,
+    "sonOdemeTarihi": "2024-06-15"
+  },
+  {
+    "id": "p7",
+    "userId": "u1",
+    "baslik": "Online Kurs Aboneliği",
+    "tutar": 299,
+    "kategori": "Eğitim",
+    "gunSayisi": 1,
+    "aktif": false,
+    "sonOdemeTarihi": "2024-06-01"
+  },
+  {
+    "id": "p8",
+    "userId": "u1",
+    "baslik": "Spor Salonu Üyeliği",
+    "tutar": 650,
+    "kategori": "Sağlık",
+    "gunSayisi": 10,
+    "aktif": true,
+    "sonOdemeTarihi": "2024-06-10"
+  },
+  {
+    "id": "p9",
+    "userId": "u1",
+    "baslik": "İnternet Faturası",
+    "tutar": 420,
+    "kategori": "Fatura",
+    "gunSayisi": 20,
+    "aktif": true,
+    "sonOdemeTarihi": "2024-06-20"
+  },
+  {
+    "id": "p10",
+    "userId": "u1",
+    "baslik": "Sigorta Primi",
+    "tutar": 1200,
+    "kategori": "Sağlık",
+    "gunSayisi": 5,
+    "aktif": false,
+    "sonOdemeTarihi": "2024-06-05"
+  }
+]
