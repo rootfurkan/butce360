@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 10;
 
 const transactions = [
   { id: 1, dateValue: "2024-01-15", date: "15 Oca\n2024", description: "Migros Market\nAlışverişi", category: "Market", categoryType: "market", type: "GİDER", amount: "-1.240,50 ₺", amountType: "expense" },
