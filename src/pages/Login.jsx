@@ -158,7 +158,9 @@ export default function Login() {
 
       <div className="register-pill">
         <span>Henüz bir hesabınız yok mu?</span>
-        <button type="button">Kayıt Ol</button>
+        <button type="button"
+        onClick={()=>navigate("/register") }
+        >Kayıt Ol</button>
       </div>
     </main>
   );

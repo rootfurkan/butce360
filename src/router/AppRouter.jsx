@@ -13,6 +13,7 @@ import Reports from "../pages/Reports";
 import AiForecast from "../pages/AiForecast";
 import Profile from "../pages/Profile";
 import EditUser from "../pages/EditUser";
+import Register from "../pages/Register";
 
 const ProtectedLayout = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -30,6 +31,7 @@ const AppRouter = () => {
       <Route path="/" element={<Navigate to="/login" replace />} />
 
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
 
       <Route element={<ProtectedLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />

@@ -160,16 +160,66 @@ export default function Profile() {
       cell: (row) => (
         <div className="profile-user-actions">
           <button type="button" onClick={() => handleEditClick(row)}>
-            Düzenle
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 19L5.8 15.2L16.6 4.4C17.4 3.6 18.7 3.6 19.5 4.4C20.3 5.2 20.3 6.5 19.5 7.3L8.7 18.1L5 19Z" />
+              <path d="M14.8 6.2L17.7 9.1" />
+            </svg>
           </button>
 
           <button type="button" onClick={() => setUserToDelete(row)}>
-            Sil
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 7H19" />
+              <path d="M9 7V5H15V7" />
+              <path d="M8 7L8.7 20H15.3L16 7" />
+              <path d="M10.5 11V17" />
+              <path d="M13.5 11V17" />
+            </svg>
           </button>
         </div>
       ),
     },
   ]; // DataTable kolonları tanımlanır.
+
+  const tableStyles = {
+    tableWrapper: {
+      style: {
+        borderRadius: "26px",
+        overflow: "hidden",
+      },
+    },
+    table: {
+      style: {
+        borderRadius: "26px",
+        overflow: "hidden",
+        background: "rgba(255, 255, 255, 0.68)",
+      },
+    },
+    headRow: {
+      style: {
+        borderTopLeftRadius: "26px",
+        borderTopRightRadius: "26px",
+        background: "rgba(248, 249, 253, 0.92)",
+        borderBottomColor: "rgba(148, 163, 184, 0.14)",
+      },
+    },
+    rows: {
+      style: {
+        background: "rgba(255, 255, 255, 0.32)",
+        borderBottomColor: "rgba(148, 163, 184, 0.1)",
+      },
+      highlightOnHoverStyle: {
+        background: "rgba(83, 74, 183, 0.06)",
+      },
+    },
+    pagination: {
+      style: {
+        borderBottomLeftRadius: "26px",
+        borderBottomRightRadius: "26px",
+        background: "rgba(248, 249, 253, 0.92)",
+        borderTopColor: "rgba(148, 163, 184, 0.16)",
+      },
+    },
+  }; // DataTable'ın kendi iç kenarları burada yuvarlatılır.
 
   return (
     <section className="profile-page">
@@ -277,6 +327,7 @@ export default function Profile() {
           pagination
           paginationPerPage={10}
           paginationRowsPerPageOptions={[10]}
+          customStyles={tableStyles}
           highlightOnHover
           pointerOnHover
           noDataComponent="Kayıtlı kullanıcı bulunamadı."
@@ -284,27 +335,27 @@ export default function Profile() {
       </section>
 
       {userToDelete && (
-        <section className="profile-card">
-          <div className="profile-card-title-row">
-            <div>
-              <h2>Kullanıcı Silme Onayı</h2>
-              <p>
-                {userToDelete.ad} {userToDelete.soyad} isimli kullanıcıyı silmek
-                istediğinize emin misiniz?
-              </p>
-            </div>
+        <div className="profile-modal-backdrop">
+          <div className="profile-delete-modal">
+            <h2>Kullanıcı Silme Onayı</h2>
+            <p>
+              <strong>
+                {userToDelete.ad} {userToDelete.soyad}
+              </strong>{" "}
+              isimli kullanıcıyı silmek istediğinize emin misiniz?
+            </p>
 
-            <div className="profile-user-actions">
-              <button type="button" onClick={handleConfirmDelete}>
+            <div className="profile-modal-actions">
+              <button type="button" className="profile-modal-delete" onClick={handleConfirmDelete}>
                 Evet, Sil
               </button>
 
-              <button type="button" onClick={() => setUserToDelete(null)}>
+              <button type="button" className="profile-modal-cancel" onClick={() => setUserToDelete(null)}>
                 Vazgeç
               </button>
             </div>
           </div>
-        </section>
+        </div>
       )}
     </section>
   );
