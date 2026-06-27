@@ -27,15 +27,28 @@ export default function Transactions() {
     selectUserPaymentsAsItems(state, userId)
   );
 
-  const allItems = useMemo(
-    () =>
-      [...txItems, ...paymentItems].sort(
-        (a, b) => new Date(b.tarih) - new Date(a.tarih)
-      ),
-    [txItems, paymentItems]
-  );
+  const allCategories = useMemo(() => {
+    const all = [...txItems, ...paymentItems];
+    return [...new Set(all.map((i) => i.kategori))];
+  }, [txItems, paymentItems]);
 
-  const categories = [...new Set(allItems.map((i) => i.kategori))];
+  const allItems = useMemo(() => {
+    let items = [...txItems, ...paymentItems];
+    if (filter.kategori !== "hepsi") {
+      items = items.filter((i) => i.kategori === filter.kategori);
+    }
+    if (filter.tur !== "hepsi") {
+      items = items.filter((i) => i.tur === filter.tur);
+    }
+    if (filter.baslangic) {
+      items = items.filter((i) => i.tarih >= filter.baslangic);
+    }
+    if (filter.bitis) {
+      items = items.filter((i) => i.tarih <= filter.bitis);
+    }
+    return items.sort((a, b) => new Date(b.tarih) - new Date(a.tarih));
+  }, [txItems, paymentItems, filter.kategori, filter.tur, filter.baslangic, filter.bitis]);
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.max(1, Math.ceil(allItems.length / ITEMS_PER_PAGE));
@@ -89,7 +102,7 @@ export default function Transactions() {
             className="filter-select-button"
           >
             <option value="hepsi">Tüm Kategoriler</option>
-            {categories.map((cat) => (
+            {allCategories.map((cat) => (
               <option key={cat} value={cat}>
                 {cat}
               </option>
