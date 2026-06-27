@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   selectUserMonthlyIncome,
@@ -19,8 +19,11 @@ const formatTL = (v) =>
     maximumFractionDigits: 2,
   })}`;
 
+const CATEGORIES_PER_PAGE = 5;
+
 const Dashboard = () => {
   const userId = useSelector((state) => state.auth.currentUser?.id);
+  const [categoryPage, setCategoryPage] = useState(1);
 
   /* ============ TRANSACTIONS ============ */
   const txMonthlyIncome = useSelector((state) =>
@@ -87,6 +90,13 @@ const Dashboard = () => {
       value: toplam > 0 ? Math.round((value / toplam) * 100) : 0,
     }));
   }, [txItems, paymentItems]);
+
+  const categoryTotalPages = Math.max(1, Math.ceil(categories.length / CATEGORIES_PER_PAGE));
+  const safeCategoryPage = Math.min(categoryPage, categoryTotalPages);
+  const visibleCategories = categories.slice(
+    (safeCategoryPage - 1) * CATEGORIES_PER_PAGE,
+    safeCategoryPage * CATEGORIES_PER_PAGE
+  );
 
   /* ============ KARTLAR ============ */
   const summaryCards = [
@@ -248,7 +258,7 @@ const Dashboard = () => {
           </div>
 
           <div className="category-list">
-            {categories.map((cat) => (
+            {visibleCategories.map((cat) => (
               <div className="category-list-item" key={cat.name}>
                 <div>
                   <span className="category-dot category-dot-blue" />
@@ -268,6 +278,26 @@ const Dashboard = () => {
               >
                 Gider verisi yok
               </p>
+            )}
+
+            {categoryTotalPages > 1 && (
+              <div className="category-pagination">
+                <button
+                  type="button"
+                  disabled={safeCategoryPage === 1}
+                  onClick={() => setCategoryPage((p) => p - 1)}
+                >
+                  ‹
+                </button>
+                <span>{safeCategoryPage} / {categoryTotalPages}</span>
+                <button
+                  type="button"
+                  disabled={safeCategoryPage === categoryTotalPages}
+                  onClick={() => setCategoryPage((p) => p + 1)}
+                >
+                  ›
+                </button>
+              </div>
             )}
           </div>
         </aside>

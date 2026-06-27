@@ -931,6 +931,29 @@
     color: #4d5665;
   }
 
+  .category-pagination {
+    @apply mt-4 flex items-center justify-center gap-3;
+  }
+
+  .category-pagination button {
+    @apply flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full border-none text-[16px] font-semibold transition-colors;
+    background: #f1f5f9;
+    color: #4d5665;
+  }
+
+  .category-pagination button:hover:not(:disabled) {
+    background: #e2e8f0;
+  }
+
+  .category-pagination button:disabled {
+    @apply cursor-not-allowed opacity-40;
+  }
+
+  .category-pagination span {
+    @apply text-[13px] font-medium;
+    color: #94a3b8;
+  }
+
   .category-dot {
     @apply h-[13px] w-[13px] rounded-full;
   }
