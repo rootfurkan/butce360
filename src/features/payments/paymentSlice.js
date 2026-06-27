@@ -1,15 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createSelector } from '@reduxjs/toolkit'
 import paymentsData from '../../data/payments.json'
 
-// LocalStorage'da kayıtlı ödeme talimatları okunur.
-const savedPayments = JSON.parse(localStorage.getItem('payments'))
-
-// Ödeme talimatları localStorage'a kaydedilir.
-const savePaymentsToStorage = (payments) => {
-  localStorage.setItem('payments', JSON.stringify(payments))
-}
-
-// Yeni ödeme için p1, p2, p3 şeklinde sıradaki id üretilir.
 const createPaymentId = (payments) => {
   const lastNumber = payments.reduce((max, payment) => {
     const number = Number(String(payment.id).replace('p', ''))
@@ -20,7 +11,7 @@ const createPaymentId = (payments) => {
 }
 
 const initialState = {
-  payments: savedPayments || paymentsData,
+  payments: paymentsData,
 }
 
 const paymentSlice = createSlice({
@@ -28,41 +19,27 @@ const paymentSlice = createSlice({
   initialState,
   reducers: {
     addPayment: (state, action) => {
-      const newItem = {
+      state.payments.push({
         id: createPaymentId(state.payments),
         aktif: true,
         ...action.payload,
-      }
-
-      state.payments.push(newItem)
-      savePaymentsToStorage(state.payments)
+      })
     },
 
     updatePayment: (state, action) => {
       const index = state.payments.findIndex((p) => p.id === action.payload.id)
-
       if (index !== -1) {
-        state.payments[index] = {
-          ...state.payments[index],
-          ...action.payload,
-        }
-
-        savePaymentsToStorage(state.payments)
+        state.payments[index] = { ...state.payments[index], ...action.payload }
       }
     },
 
     deletePayment: (state, action) => {
       state.payments = state.payments.filter((p) => p.id !== action.payload)
-      savePaymentsToStorage(state.payments)
     },
 
     togglePayment: (state, action) => {
       const item = state.payments.find((p) => p.id === action.payload)
-
-      if (item) {
-        item.aktif = !item.aktif
-        savePaymentsToStorage(state.payments)
-      }
+      if (item) item.aktif = !item.aktif
     },
 
     processAutoPayments: (state) => {
@@ -80,11 +57,48 @@ const paymentSlice = createSlice({
           payment.sonOdemeTarihi = yeniTarih.toISOString().split('T')[0]
         }
       })
-
-      savePaymentsToStorage(state.payments)
     },
   },
 })
+
+/* ============= SELECTORS ============= */
+
+export const selectPayments = (state) => state.payments.payments
+
+export const selectUserActivePayments = createSelector(
+  [selectPayments, (_, userId) => userId],
+  (payments, userId) => payments.filter((p) => !p.userId || p.userId === userId),
+)
+
+export const selectUserMonthlyPaymentTotal = createSelector(
+  [selectUserActivePayments],
+  (payments) => {
+    const prefix = `${new Date().getFullYear()}-${String(new Date().getMonth() + 1).padStart(2, '0')}`
+    return payments
+      .filter((p) => p.sonOdemeTarihi.startsWith(prefix))
+      .reduce((s, p) => s + p.tutar, 0)
+  },
+)
+
+export const selectUserTotalPayment = createSelector(
+  [selectUserActivePayments],
+  (payments) => payments.reduce((s, p) => s + p.tutar, 0),
+)
+
+export const selectUserPaymentsAsItems = createSelector(
+  [selectUserActivePayments],
+  (payments) =>
+    payments.map((p) => ({
+      id: `payment_${p.id}`,
+      userId: p.userId,
+      source: 'payment',
+      tur: 'gider',
+      tarih: p.sonOdemeTarihi,
+      kategori: p.kategori,
+      tutar: p.tutar,
+      aciklama: p.baslik,
+    })),
+)
 
 export const {
   addPayment,

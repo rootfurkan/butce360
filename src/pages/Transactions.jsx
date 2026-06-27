@@ -1,83 +1,250 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useMemo } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectFilteredTransactions,
+  deleteTransaction,
+  setFilter,
+  resetFilter,
+} from "../features/transactions/transactionSlice";
+import { selectUserPaymentsAsItems } from "../features/payments/paymentSlice";
 
 const ITEMS_PER_PAGE = 10;
 
-const transactions = [
-  { id: 1, dateValue: "2024-01-15", date: "15 Oca\n2024", description: "Migros Market\nAlışverişi", category: "Market", categoryType: "market", type: "GİDER", amount: "-1.240,50 ₺", amountType: "expense" },
-  { id: 2, dateValue: "2024-01-05", date: "05 Oca\n2024", description: "Aylık Maaş Ödemesi", category: "Maaş", categoryType: "salary", type: "GELİR", amount: "+42.000,00\n₺", amountType: "income" },
-  { id: 3, dateValue: "2024-01-02", date: "02 Oca\n2024", description: "Ev Kirası - Ocak", category: "Kira", categoryType: "rent", type: "GİDER", amount: "-15.500,00 ₺", amountType: "expense" },
-  { id: 4, dateValue: "2024-01-01", date: "01 Oca\n2024", description: "Netflix Aboneliği", category: "Eğlence", categoryType: "entertainment", type: "GİDER", amount: "-149,90 ₺", amountType: "expense" },
-  { id: 5, dateValue: "2023-12-30", date: "30 Ara\n2023", description: "Shell Akaryakıt", category: "Ulaşım", categoryType: "transport", type: "GİDER", amount: "-1.850,00 ₺", amountType: "expense" },
-];
-
-const CategoryIcon = ({ type }) => {
-  const icons = { market: "🛒", salary: "₺", rent: "⌂", entertainment: "▶", transport: "◉" };
-  return <span className={`transaction-category-icon ${type}`}>{icons[type]}</span>;
-};
+const formatTL = (v) =>
+  `${Math.abs(v).toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+  })} ₺`;
 
 export default function Transactions() {
-  const navigate = useNavigate();
-  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const categories = [...new Set(transactions.map((transaction) => transaction.category))];
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.auth.currentUser?.id);
+  const filter = useSelector((state) => state.transactions.filter);
 
-  const totalPages = Math.max(1, Math.ceil(transactions.length / ITEMS_PER_PAGE));
+  const txItems = useSelector((state) =>
+    selectFilteredTransactions(state, userId)
+  );
+  const paymentItems = useSelector((state) =>
+    selectUserPaymentsAsItems(state, userId)
+  );
+
+  const allItems = useMemo(
+    () =>
+      [...txItems, ...paymentItems].sort(
+        (a, b) => new Date(b.tarih) - new Date(a.tarih)
+      ),
+    [txItems, paymentItems]
+  );
+
+  const categories = [...new Set(allItems.map((i) => i.kategori))];
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.max(1, Math.ceil(allItems.length / ITEMS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
-  const pageItems = transactions.slice((safePage - 1) * ITEMS_PER_PAGE, safePage * ITEMS_PER_PAGE);
+  const pageItems = allItems.slice(
+    (safePage - 1) * ITEMS_PER_PAGE,
+    safePage * ITEMS_PER_PAGE
+  );
+
+  const handleFilterChange = (key, value) => {
+    dispatch(setFilter({ [key]: value }));
+    setCurrentPage(1);
+  };
 
   return (
     <section className="transactions-page">
       <div className="transactions-filter-card">
-        <div className="filter-group filter-date">
+        <div className="filter-group">
           <span>Tarih Aralığı:</span>
-          <div className="date-filter-wrapper">
-            <button type="button" className="filter-select-button" aria-expanded={isDatePickerOpen} aria-controls="date-range-picker" onClick={() => setIsDatePickerOpen((open) => !open)}>
-              <span aria-hidden="true">▣</span>
-              <strong>01 Oca 2024 - 31 Oca 2024</strong>
-            </button>
-            {isDatePickerOpen && (
-              <div className="date-range-popover" id="date-range-picker">
-                <label>Başlangıç<input type="date" defaultValue="2024-01-01" /></label>
-                <label>Bitiş<input type="date" defaultValue="2024-01-31" /></label>
-                <button type="button" onClick={() => setIsDatePickerOpen(false)}>Uygula</button>
-              </div>
-            )}
-          </div>
+          <input
+            type="date"
+            value={filter.baslangic}
+            onChange={(e) => handleFilterChange("baslangic", e.target.value)}
+          />
+          <span>-</span>
+          <input
+            type="date"
+            value={filter.bitis}
+            onChange={(e) => handleFilterChange("bitis", e.target.value)}
+          />
         </div>
 
-        <div className="filter-group filter-category">
-          <span>Kategori:</span>
-          <select className="filter-select-button filter-category-select" defaultValue="all" aria-label="Kategori seçin">
-            <option value="all">Tüm Kategoriler</option>
-            {categories.map((category) => <option value={category} key={category}>{category}</option>)}
+        <div className="filter-group">
+          <span>Tür:</span>
+          <select
+            value={filter.tur}
+            onChange={(e) => handleFilterChange("tur", e.target.value)}
+            className="filter-select-button"
+          >
+            <option value="hepsi">Hepsi</option>
+            <option value="gelir">Gelir</option>
+            <option value="gider">Gider</option>
           </select>
         </div>
 
-        <button type="button" className="filter-action-button">Filtrele</button>
-        <button type="button" className="export-action-button">Dışa Aktar</button>
+        <div className="filter-group">
+          <span>Kategori:</span>
+          <select
+            value={filter.kategori}
+            onChange={(e) => handleFilterChange("kategori", e.target.value)}
+            className="filter-select-button"
+          >
+            <option value="hepsi">Tüm Kategoriler</option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <button
+          type="button"
+          className="filter-action-button"
+          onClick={() => {
+            dispatch(resetFilter());
+            setCurrentPage(1);
+          }}
+        >
+          Sıfırla
+        </button>
       </div>
 
       <div className="transactions-list-card">
-        <div className="transactions-list-head"><span>Tarih</span><span>Açıklama</span><span>Kategori</span><span>Tür</span><span>Tutar</span></div>
+        <div className="transactions-list-head">
+          <span>Tarih</span>
+          <span>Açıklama</span>
+          <span>Kategori</span>
+          <span>Tür</span>
+          <span>Tutar</span>
+          <span></span>
+        </div>
+
         <div className="transactions-list-body">
-          {pageItems.map((transaction) => (
-            <div className="transactions-list-row" key={transaction.id}>
-              <div className="transaction-date">{transaction.date.split("\n").map((line) => <span key={line}>{line}</span>)}</div>
-              <div className="transaction-description">{transaction.description.split("\n").map((line) => <strong key={line}>{line}</strong>)}</div>
-              <div className="transaction-category"><CategoryIcon type={transaction.categoryType} /><span>{transaction.category}</span></div>
-              <div><span className={`transaction-type ${transaction.amountType}`}>{transaction.type}</span></div>
-              <div className={`transaction-list-amount ${transaction.amountType}`}>{transaction.amount.split("\n").map((line) => <strong key={line}>{line}</strong>)}</div>
+          {pageItems.map((item) => (
+            <div className="transactions-list-row" key={item.id}>
+              <div className="transaction-date">
+                {new Date(item.tarih).toLocaleDateString("tr-TR", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                })}
+              </div>
+
+              <div className="transaction-description">
+                <strong>{item.aciklama}</strong>
+                {item.source === "payment" && (
+                  <span
+                    style={{
+                      fontSize: 11,
+                      color: "#a78bfa",
+                      marginLeft: 6,
+                    }}
+                  >
+                    (Otomatik Ödeme)
+                  </span>
+                )}
+              </div>
+
+              <div className="transaction-category">
+                <span>{item.kategori}</span>
+              </div>
+
+              <div>
+                <span
+                  className={`transaction-type ${
+                    item.tur === "gelir" ? "income" : "expense"
+                  }`}
+                >
+                  {item.tur === "gelir" ? "GELİR" : "GİDER"}
+                </span>
+              </div>
+
+              <div
+                className={`transaction-list-amount ${
+                  item.tur === "gelir" ? "income" : "expense"
+                }`}
+              >
+                <strong>
+                  {item.tur === "gelir" ? "+" : "-"}
+                  {formatTL(item.tutar)}
+                </strong>
+              </div>
+
+              <div>
+                {item.source === "transaction" && (
+                  <button
+                    type="button"
+                    className="btn-table-action-danger"
+                    onClick={() => dispatch(deleteTransaction(item.id))}
+                  >
+                    Sil
+                  </button>
+                )}
+              </div>
             </div>
           ))}
+
+          {allItems.length === 0 && (
+            <p
+              style={{
+                padding: "2rem",
+                textAlign: "center",
+                color: "#94a3b8",
+              }}
+            >
+              İşlem bulunamadı.
+            </p>
+          )}
         </div>
 
         <div className="transactions-pagination">
-          <p className="transactions-count">{transactions.length ? `${(safePage - 1) * ITEMS_PER_PAGE + 1}-${Math.min(safePage * ITEMS_PER_PAGE, transactions.length)}` : "0-0"} / {transactions.length} işlem gösteriliyor</p>
+          <p className="transactions-count">
+            {allItems.length
+              ? `${(safePage - 1) * ITEMS_PER_PAGE + 1}-${Math.min(
+                  safePage * ITEMS_PER_PAGE,
+                  allItems.length
+                )}`
+              : "0-0"}{" "}
+            / {allItems.length} işlem gösteriliyor
+          </p>
+
           <div className="pagination-buttons">
-            <button type="button" className="pagination-arrow" aria-label="Önceki sayfa" disabled={safePage === 1} onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}>‹</button>
-            {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => <button type="button" className={`pagination-number ${safePage === page ? "active" : ""}`} aria-current={safePage === page ? "page" : undefined} key={page} onClick={() => setCurrentPage(page)}>{page}</button>)}
-            <button type="button" className="pagination-arrow" aria-label="Sonraki sayfa" disabled={safePage === totalPages} onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}>›</button>
+            <button
+              type="button"
+              className="pagination-arrow"
+              disabled={safePage === 1}
+              onClick={() =>
+                setCurrentPage((page) => Math.max(1, page - 1))
+              }
+            >
+              ‹
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+              (page) => (
+                <button
+                  type="button"
+                  className={`pagination-number ${
+                    safePage === page ? "active" : ""
+                  }`}
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                >
+                  {page}
+                </button>
+              )
+            )}
+
+            <button
+              type="button"
+              className="pagination-arrow"
+              disabled={safePage === totalPages}
+              onClick={() =>
+                setCurrentPage((page) => Math.min(totalPages, page + 1))
+              }
+            >
+              ›
+            </button>
           </div>
         </div>
       </div>

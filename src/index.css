@@ -2781,6 +2781,11 @@
     box-shadow: 0 14px 28px rgba(54, 181, 139, 0.24);
   }
 
+  .profile-toast.error {
+    background: #ef4444;
+    box-shadow: 0 14px 28px rgba(239, 68, 68, 0.24);
+  }
+
   .profile-page-header {
     @apply mb-7;
   }

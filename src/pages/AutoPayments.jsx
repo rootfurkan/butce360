@@ -28,58 +28,54 @@ const AutoPayments = () => {
   const paymentList = useSelector((state) => state.payments.payments);
   const currentUser = useSelector((state) => state.auth.currentUser);
 
-  const [selectedPayment, setSelectedPayment] = useState(null); // Düzenlenecek ödeme burada tutulur.
-  const [showForm, setShowForm] = useState(false); // Yeni talimat formunun açık/kapalı durumu tutulur.
-  const [title, setTitle] = useState(""); // Ödeme başlığı inputu tutulur.
-  const [company, setCompany] = useState(""); // Ödenecek firma inputu tutulur.
-  const [amount, setAmount] = useState(""); // Tutar inputu tutulur.
-  const [paymentDay, setPaymentDay] = useState("1"); // Ayın kaçında ödeneceği tutulur.
-  const [formErrors, setFormErrors] = useState({}); // Input altı hata mesajları tutulur.
-  const [successMessage, setSuccessMessage] = useState(""); // Toast mesajı tutulur.
+  const [selectedPayment, setSelectedPayment] = useState(null);
+  const [showForm, setShowForm] = useState(false);
+  const [title, setTitle] = useState("");
+  const [company, setCompany] = useState("");
+  const [amount, setAmount] = useState("");
+  const [paymentDay, setPaymentDay] = useState("1");
+  const [formErrors, setFormErrors] = useState({});
+  const [toast, setToast] = useState({ message: "", type: "success" });
+
+  useEffect(() => {
+    if (!toast.message) return;
+    const timer = setTimeout(() => setToast({ message: "", type: "success" }), 2500);
+    return () => clearTimeout(timer);
+  }, [toast.message]);
 
   const userPayments = paymentList.filter(
     (payment) => !payment.userId || payment.userId === currentUser?.id
   );
 
-  const paymentCards = [...userPayments].reverse(); // En son eklenen ödeme kartlarda en başta görünür.
-
-  useEffect(() => {
-    if (!successMessage) return;
-
-    const timer = setTimeout(() => {
-      setSuccessMessage("");
-    }, 2500);
-
-    return () => clearTimeout(timer);
-  }, [successMessage]);
+  const paymentCards = [...userPayments].reverse();
 
   const resetForm = () => {
-    setSelectedPayment(null); // Düzenleme modu kapatılır.
-    setShowForm(false); // Form kapatılır.
-    setTitle(""); // Başlık inputu temizlenir.
-    setCompany(""); // Firma inputu temizlenir.
-    setAmount(""); // Tutar inputu temizlenir.
-    setPaymentDay("1"); // Ödeme günü varsayılana çekilir.
-    setFormErrors({}); // Hatalar temizlenir.
+    setSelectedPayment(null);
+    setShowForm(false);
+    setTitle("");
+    setCompany("");
+    setAmount("");
+    setPaymentDay("1");
+    setFormErrors({});
   };
 
   const openNewPaymentForm = () => {
     resetForm();
-    setShowForm(true); // Yeni talimat formu açılır.
+    setShowForm(true);
   };
 
   const handleEditClick = (payment) => {
-    setSelectedPayment(payment); // Tıklanan ödeme düzenleme için seçilir.
-    setShowForm(true); // Form açılır.
-    setTitle(payment.baslik || ""); // Ödeme başlığı inputa yazılır.
-    setCompany(payment.firma || payment.kategori || ""); // Firma bilgisi inputa yazılır.
-    setAmount(String(payment.tutar || "")); // Tutar inputa yazılır.
-    setPaymentDay(String(payment.gunSayisi || "1")); // Ödeme günü inputa yazılır.
-    setFormErrors({}); // Eski hatalar temizlenir.
+    setSelectedPayment(payment);
+    setShowForm(true);
+    setTitle(payment.baslik || "");
+    setCompany(payment.firma || payment.kategori || "");
+    setAmount(String(payment.tutar || ""));
+    setPaymentDay(String(payment.gunSayisi || "1"));
+    setFormErrors({});
   };
 
   const validateForm = () => {
-    const errors = {}; // Hatalar bu objede toplanır.
+    const errors = {};
 
     if (!title.trim()) errors.title = "Ödeme başlığı boş bırakılamaz.";
     if (!company.trim()) errors.company = "Ödenecek firma boş bırakılamaz.";
@@ -88,16 +84,20 @@ const AutoPayments = () => {
       errors.paymentDay = "Ödeme günü 1 ile 31 arasında olmalıdır.";
     }
 
-    setFormErrors(errors); // Hatalar inputların altında gösterilir.
+    setFormErrors(errors);
 
     return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Formun sayfayı yenilemesi engellenir.
+    e.preventDefault();
 
-    if (!validateForm()) return;
+    if (!validateForm()) {
+      setToast({ message: "İşlem gerçekleşmedi. Lütfen alanları kontrol edin.", type: "error" });
+      return;
+    }
 
+    const now = new Date();
     const paymentData = {
       userId: currentUser?.id,
       baslik: title,
@@ -105,28 +105,32 @@ const AutoPayments = () => {
       kategori: company,
       tutar: Number(amount),
       gunSayisi: Number(paymentDay),
-      sonOdemeTarihi: `2024-06-${String(paymentDay).padStart(2, "0")}`,
-    }; // Kaydedilecek ödeme bilgileri hazırlanır.
+      sonOdemeTarihi: `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(paymentDay).padStart(2, "0")}`,
+    };
 
     if (selectedPayment) {
-      dispatch(updatePayment({ ...paymentData, id: selectedPayment.id })); // Seçili ödeme güncellenir.
-      setSuccessMessage("Ödeme talimatı güncellendi.");
+      dispatch(updatePayment({ ...paymentData, id: selectedPayment.id }));
+      setToast({ message: "Ödeme talimatı güncellendi.", type: "success" });
     } else {
-      dispatch(addPayment(paymentData)); // Yeni ödeme talimatı eklenir.
-      setSuccessMessage("Yeni ödeme talimatı eklendi.");
+      dispatch(addPayment(paymentData));
+      setToast({ message: "Yeni ödeme talimatı eklendi.", type: "success" });
     }
 
     resetForm();
   };
 
+  const handleDelete = (id) => {
+    dispatch(deletePayment(id));
+    setToast({ message: "Ödeme talimatı silindi.", type: "success" });
+  };
+
   const calendarItems = userPayments
-    .filter((payment) => payment.aktif)
     .sort((a, b) => Number(a.gunSayisi) - Number(b.gunSayisi))
     .slice(0, 5);
 
   return (
     <section className="payments-page">
-      {successMessage && <div className="profile-toast">{successMessage}</div>}
+      {toast.message && <div className={`profile-toast${toast.type === "error" ? " error" : ""}`}>{toast.message}</div>}
 
       <div className="payments-page-header">
         <div>
@@ -240,7 +244,7 @@ const AutoPayments = () => {
                     </svg>
                   </button>
 
-                  <button type="button" aria-label="Sil" onClick={() => dispatch(deletePayment(payment.id))}>
+                  <button type="button" aria-label="Sil" onClick={() => handleDelete(payment.id)}>
                     <svg viewBox="0 0 24 24" fill="none">
                       <path d="M6 7H18" />
                       <path d="M9 7V5H15V7" />
