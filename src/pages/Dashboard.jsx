@@ -1,12 +1,112 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
+import {
+  selectUserMonthlyIncome,
+  selectUserMonthlyExpense as selectTxMonthlyExpense,
+  selectUserTotalIncome,
+  selectUserTotalExpense as selectTxTotalExpense,
+  selectUserTransactions,
+} from "../features/transactions/transactionSlice";
+import {
+  selectUserMonthlyPaymentTotal,
+  selectUserTotalPayment,
+  selectUserPaymentsAsItems,
+} from "../features/payments/paymentSlice";
+
+const formatTL = (v) =>
+  `₺${Math.abs(v).toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
+
+const CATEGORIES_PER_PAGE = 5;
 
 const Dashboard = () => {
+  const userId = useSelector((state) => state.auth.currentUser?.id);
+  const [categoryPage, setCategoryPage] = useState(1);
+
+  /* ============ TRANSACTIONS ============ */
+  const txMonthlyIncome = useSelector((state) =>
+    selectUserMonthlyIncome(state, userId)
+  );
+  const txMonthlyExpense = useSelector((state) =>
+    selectTxMonthlyExpense(state, userId)
+  );
+  const txTotalIncome = useSelector((state) =>
+    selectUserTotalIncome(state, userId)
+  );
+  const txTotalExpense = useSelector((state) =>
+    selectTxTotalExpense(state, userId)
+  );
+
+  /* ============ PAYMENTS ============ */
+  const monthlyPaymentTotal = useSelector((state) =>
+    selectUserMonthlyPaymentTotal(state, userId)
+  );
+  const totalPayment = useSelector((state) =>
+    selectUserTotalPayment(state, userId)
+  );
+  const paymentItems = useSelector((state) =>
+    selectUserPaymentsAsItems(state, userId)
+  );
+
+  /* ============ BIRLESTIRME ============ */
+  const monthlyExpense = txMonthlyExpense + monthlyPaymentTotal;
+  const totalExpense = txTotalExpense + totalPayment;
+  const totalBalance = txTotalIncome - totalExpense;
+
+  const saving = totalBalance - monthlyExpense;
+  const savingPercent =
+    totalBalance > 0
+      ? Math.min(100, Math.round((saving / totalBalance) * 100))
+      : 0;
+
+  /* ============ SON ISLEMLER ============ */
+  const txItems = useSelector((state) => selectUserTransactions(state, userId))
+    .filter((t) => t.tur === "gelir" || t.tur === "gider")
+    .map((t) => ({ ...t, source: "transaction" }));
+
+  const recentTransactions = useMemo(
+    () =>
+      [...txItems, ...paymentItems]
+        .sort((a, b) => new Date(b.tarih) - new Date(a.tarih))
+        .slice(0, 5),
+    [txItems, paymentItems]
+  );
+
+  /* ============ KATEGORI DAGILIMI ============ */
+  const categories = useMemo(() => {
+    const all = [
+      ...txItems.filter((t) => t.tur === "gider"),
+      ...paymentItems,
+    ];
+    const toplam = all.reduce((s, i) => s + i.tutar, 0);
+    const gruplar = {};
+    all.forEach((i) => {
+      gruplar[i.kategori] = (gruplar[i.kategori] || 0) + i.tutar;
+    });
+    return Object.entries(gruplar).map(([name, value]) => ({
+      name,
+      value: toplam > 0 ? Math.round((value / toplam) * 100) : 0,
+    }));
+  }, [txItems, paymentItems]);
+
+  const categoryTotalPages = Math.max(1, Math.ceil(categories.length / CATEGORIES_PER_PAGE));
+  const safeCategoryPage = Math.min(categoryPage, categoryTotalPages);
+  const visibleCategories = categories.slice(
+    (safeCategoryPage - 1) * CATEGORIES_PER_PAGE,
+    safeCategoryPage * CATEGORIES_PER_PAGE
+  );
+
+  /* ============ KARTLAR ============ */
   const summaryCards = [
     {
       label: "Toplam Bakiye",
-      value: "₺45.250",
-      detail: "↗ +%2.4 geçen aydan",
+      value: formatTL(totalBalance),
+      detail:
+        totalBalance >= 0
+          ? "↗ Pozitif bakiyedesiniz"
+          : "↘ Negatif bakiyedesiniz",
       type: "balance",
       icon: (
         <svg viewBox="0 0 24 24" fill="none">
@@ -18,8 +118,8 @@ const Dashboard = () => {
     },
     {
       label: "Bu Ay Gelir",
-      value: "₺12.400",
-      detail: "Maaş ve Ek Gelirler",
+      value: formatTL(txMonthlyIncome),
+      detail: txMonthlyIncome > 0 ? "Gelir var" : "Henüz gelir yok",
       type: "income",
       icon: (
         <svg viewBox="0 0 24 24" fill="none">
@@ -30,8 +130,8 @@ const Dashboard = () => {
     },
     {
       label: "Bu Ay Gider",
-      value: "₺6.850",
-      detail: "3 Planlanmış Ödeme",
+      value: formatTL(monthlyExpense),
+      detail: `${categories.length} Kategoride Harcama`,
       type: "expense",
       icon: (
         <svg viewBox="0 0 24 24" fill="none">
@@ -42,8 +142,8 @@ const Dashboard = () => {
     },
     {
       label: "Tasarruf",
-      value: "₺5.550",
-      detail: "Hedefin %65’i tamamlandı",
+      value: formatTL(saving),
+      detail: `Hedefin %${savingPercent}'i tamamlandı`,
       type: "saving",
       icon: (
         <svg viewBox="0 0 24 24" fill="none">
@@ -56,169 +156,171 @@ const Dashboard = () => {
     },
   ];
 
-  const transactions = [
-    {
-      date: "12 Haz 2024",
-      description: "Migros Market",
-      category: "Mutfak",
-      amount: "-₺840,50",
-      amountType: "negative",
-      badge: "gray",
-    },
-    {
-      date: "10 Haz 2024",
-      description: "Aylık Kira",
-      category: "Ev",
-      amount: "-₺4.500,00",
-      amountType: "negative",
-      badge: "gray",
-    },
-    {
-      date: "05 Haz 2024",
-      description: "Şirket Maaş Ödemesi",
-      category: "Gelir",
-      amount: "+₺12.400,00",
-      amountType: "positive",
-      badge: "blue",
-    },
-    {
-      date: "03 Haz 2024",
-      description: "Netflix Abonelik",
-      category: "Eğlence",
-      amount: "-₺159,90",
-      amountType: "negative",
-      badge: "gray",
-    },
-    {
-      date: "01 Haz 2024",
-      description: "Starbucks Coffee",
-      category: "Gıda",
-      amount: "-₺85,00",
-      amountType: "negative",
-      badge: "gray",
-    },
-  ];
-
-  const categories = [
-    { name: "Kira", value: "%65", color: "purple" },
-    { name: "Market", value: "%15", color: "blue" },
-    { name: "Ulaşım", value: "%12", color: "red" },
-    { name: "Diğer", value: "%8", color: "violet" },
-  ];
-
   return (
     <section className="dashboard-content">
-          <div className="dashboard-summary-grid">
-            {summaryCards.map((card) => (
-              <article
-                className={`dashboard-summary-card dashboard-summary-card-${card.type}`}
-                key={card.label}
-              >
-                <div className="summary-card-top">
-                  <span>{card.label}</span>
-                  <div className="summary-card-icon">{card.icon}</div>
-                </div>
-
-                <strong>{card.value}</strong>
-
-                {card.progress ? (
-                  <div className="saving-progress-area">
-                    <div className="saving-progress-track">
-                      <span />
-                    </div>
-                    <p>{card.detail}</p>
-                  </div>
-                ) : (
-                  <p>{card.detail}</p>
-                )}
-              </article>
-            ))}
-          </div>
-
-          <div className="dashboard-main-grid">
-            <section className="recent-transactions-card">
-              <div className="dashboard-card-header">
-                <h2>Son İşlemler</h2>
-                <button type="button">Tümünü Gör</button>
-              </div>
-
-              <div className="transactions-table">
-                <div className="transactions-table-head">
-                  <span>Tarih</span>
-                  <span>Açıklama</span>
-                  <span>Kategori</span>
-                  <span>Tutar</span>
-                </div>
-
-                {transactions.map((item) => (
-                  <div
-                    className="transactions-table-row"
-                    key={item.description}
-                  >
-                    <span>{item.date}</span>
-                    <strong>{item.description}</strong>
-                    <span>
-                      <em
-                        className={`category-badge category-badge-${item.badge}`}
-                      >
-                        {item.category}
-                      </em>
-                    </span>
-                    <b className={`transaction-amount ${item.amountType}`}>
-                      {item.amount}
-                    </b>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <aside className="category-card">
-              <div className="category-card-title">
-                <h2>Kategori Dağılımı</h2>
-                <p>Bu ayki gider dağılımı</p>
-              </div>
-
-              <div className="donut-chart">
-                <div className="donut-center">
-                  <span>Toplam Gider</span>
-                  <strong>₺6.850</strong>
-                </div>
-              </div>
-
-              <div className="category-list">
-                {categories.map((category) => (
-                  <div className="category-list-item" key={category.name}>
-                    <div>
-                      <span
-                        className={`category-dot category-dot-${category.color}`}
-                      />
-                      <p>{category.name}</p>
-                    </div>
-                    <strong>{category.value}</strong>
-                  </div>
-                ))}
-              </div>
-            </aside>
-          </div>
-
-          <footer className="dashboard-footer">
-            <p>© 2024 Bütçe360. Securely Fluid.</p>
-
-            <nav>
-              <button type="button">Security</button>
-              <button type="button">Privacy</button>
-              <button type="button">Terms</button>
-              <button type="button">Support</button>
-            </nav>
-          </footer>
-
-          <button
-            type="button"
-            className="dashboard-floating-button"
-            aria-label="Yeni işlem ekle"
+      <div className="dashboard-summary-grid">
+        {summaryCards.map((card) => (
+          <article
+            className={`dashboard-summary-card dashboard-summary-card-${card.type}`}
+            key={card.label}
           >
-            +
-          </button>
+            <div className="summary-card-top">
+              <span>{card.label}</span>
+              <div className="summary-card-icon">{card.icon}</div>
+            </div>
+
+            <strong>{card.value}</strong>
+
+            {card.progress ? (
+              <div className="saving-progress-area">
+                <div className="saving-progress-track">
+                  <span style={{ width: `${savingPercent}%` }} />
+                </div>
+                <p>{card.detail}</p>
+              </div>
+            ) : (
+              <p>{card.detail}</p>
+            )}
+          </article>
+        ))}
+      </div>
+
+      <div className="dashboard-main-grid">
+        <section className="recent-transactions-card">
+          <div className="dashboard-card-header">
+            <h2>Son İşlemler</h2>
+          </div>
+
+          <div className="transactions-table">
+            <div className="transactions-table-head">
+              <span>Tarih</span>
+              <span>Açıklama</span>
+              <span>Kategori</span>
+              <span>Tutar</span>
+            </div>
+
+            {recentTransactions.map((item) => (
+              <div className="transactions-table-row" key={item.id}>
+                <span>
+                  {new Date(item.tarih).toLocaleDateString("tr-TR", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </span>
+                <strong>{item.aciklama}</strong>
+                <span>
+                  <em
+                    className={`category-badge category-badge-${
+                      item.source === "payment" ? "purple" : "gray"
+                    }`}
+                  >
+                    {item.kategori}
+                    {item.source === "payment" && " (O.Ö)"}
+                  </em>
+                </span>
+                <b
+                  className={`transaction-amount ${
+                    item.tur === "gelir" ? "positive" : "negative"
+                  }`}
+                >
+                  {item.tur === "gelir" ? "+" : "-"}
+                  {formatTL(item.tutar)}
+                </b>
+              </div>
+            ))}
+
+            {recentTransactions.length === 0 && (
+              <p
+                style={{
+                  padding: "1rem",
+                  textAlign: "center",
+                  color: "#94a3b8",
+                }}
+              >
+                Henüz işlem bulunmuyor.
+              </p>
+            )}
+          </div>
+        </section>
+
+        <aside className="category-card">
+          <div className="category-card-title">
+            <h2>Kategori Dağılımı</h2>
+            <p>Bu ayki gider dağılımı</p>
+          </div>
+
+          <div className="donut-chart">
+            <div className="donut-center">
+              <span>Toplam Gider</span>
+              <strong>{formatTL(monthlyExpense)}</strong>
+            </div>
+          </div>
+
+          <div className="category-list">
+            {visibleCategories.map((cat) => (
+              <div className="category-list-item" key={cat.name}>
+                <div>
+                  <span className="category-dot category-dot-blue" />
+                  <p>{cat.name}</p>
+                </div>
+                <strong>%{cat.value}</strong>
+              </div>
+            ))}
+
+            {categories.length === 0 && (
+              <p
+                style={{
+                  textAlign: "center",
+                  color: "#94a3b8",
+                  padding: "1rem",
+                }}
+              >
+                Gider verisi yok
+              </p>
+            )}
+
+            {categoryTotalPages > 1 && (
+              <div className="category-pagination">
+                <button
+                  type="button"
+                  disabled={safeCategoryPage === 1}
+                  onClick={() => setCategoryPage((p) => p - 1)}
+                >
+                  ‹
+                </button>
+                <span>{safeCategoryPage} / {categoryTotalPages}</span>
+                <button
+                  type="button"
+                  disabled={safeCategoryPage === categoryTotalPages}
+                  onClick={() => setCategoryPage((p) => p + 1)}
+                >
+                  ›
+                </button>
+              </div>
+            )}
+          </div>
+        </aside>
+      </div>
+
+      <footer className="dashboard-footer">
+        <p>© 2024 Bütçe360. Securely Fluid.</p>
+
+        <nav>
+          <button type="button">Security</button>
+          <button type="button">Privacy</button>
+          <button type="button">Terms</button>
+          <button type="button">Support</button>
+        </nav>
+      </footer>
+
+      <button
+        type="button"
+        className="dashboard-floating-button"
+        aria-label="Yeni işlem ekle"
+      >
+        +
+      </button>
     </section>
   );
 };

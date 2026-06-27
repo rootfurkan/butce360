@@ -5,15 +5,6 @@ const Header = ({ title = "İşlemler" }) => {
     <header className="app-header">
       <div className="header-left">
         <h1>{title}</h1>
-
-        <div className="header-search">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M10.8 18.1C14.8317 18.1 18.1 14.8317 18.1 10.8C18.1 6.76832 14.8317 3.5 10.8 3.5C6.76832 3.5 3.5 6.76832 3.5 10.8C3.5 14.8317 6.76832 18.1 10.8 18.1Z" />
-            <path d="M16.2 16.2L20.5 20.5" />
-          </svg>
-
-          <input type="text" placeholder="İşlemlerde ara..." />
-        </div>
       </div>
 
       <div className="header-actions">

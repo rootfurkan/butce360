@@ -1,13 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addTransaction } from "../features/transactions/transactionSlice";
 
 const AddTransactions = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const userId = useSelector((state) => state.auth.currentUser?.id);
+
   const [activeType, setActiveType] = useState("income");
   const [activeCategory, setActiveCategory] = useState("salary");
   const [activePaymentMethod, setActivePaymentMethod] = useState("cash");
+  const [amount, setAmount] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const [description, setDescription] = useState("");
+  const [toast, setToast] = useState({ message: "", type: "success" });
+
+  useEffect(() => {
+    if (!toast.message) return;
+    const timer = setTimeout(() => setToast({ message: "", type: "success" }), 2500);
+    return () => clearTimeout(timer);
+  }, [toast.message]);
 
   const isIncome = activeType === "income";
   const isOtherCategory =
     activeCategory === "otherIncome" || activeCategory === "otherExpense";
+
+  const kategoriAdi = {
+    salary: "Maaş",
+    rentIncome: "Kira Geliri",
+    sale: "Satış",
+    otherIncome: "Diğer",
+    market: "Market",
+    transport: "Ulaşım",
+    bill: "Fatura",
+    otherExpense: "Diğer",
+  };
 
   const incomeCategories = [
     {
@@ -146,13 +174,45 @@ const AddTransactions = () => {
 
   const categories = isIncome ? incomeCategories : expenseCategories;
 
+  const getKategori = () => {
+    if (isOtherCategory) return "Diğer";
+    return kategoriAdi[activeCategory] || "Diğer";
+  };
+
   const handleTypeChange = (type) => {
     setActiveType(type);
     setActiveCategory(type === "income" ? "salary" : "market");
   };
 
+  const handleSave = () => {
+    if (!amount || parseFloat(amount.replace(",", ".")) <= 0) {
+      setToast({ message: "İşlem gerçekleşmedi. Geçerli bir tutar giriniz.", type: "error" });
+      return;
+    }
+    if (!description.trim()) {
+      setToast({ message: "İşlem gerçekleşmedi. Açıklama alanı boş bırakılamaz.", type: "error" });
+      return;
+    }
+
+    dispatch(
+      addTransaction({
+        userId: userId || "u1",
+        tur: isIncome ? "gelir" : "gider",
+        kategori: getKategori(),
+        tutar: parseFloat(amount.replace(",", ".")),
+        aciklama: description.trim(),
+        tarih: date,
+      })
+    );
+
+    setToast({ message: `${isIncome ? "Gelir" : "Gider"} başarıyla eklendi.`, type: "success" });
+
+    setTimeout(() => navigate("/transactions"), 1500);
+  };
+
   return (
     <section className="add-transaction-page">
+      {toast.message && <div className={`profile-toast${toast.type === "error" ? " error" : ""}`}>{toast.message}</div>}
       <div className="add-transaction-card">
         <div className="add-transaction-tabs">
           <button
@@ -179,12 +239,21 @@ const AddTransactions = () => {
 
               <div className="amount-input-area">
                 <label>İşlem Tutarı</label>
-                <input type="text" placeholder="0,00" />
+                <input
+                  type="text"
+                  placeholder="0,00"
+                  value={amount}
+                  onChange={(e) => setAmount(e.target.value)}
+                />
               </div>
             </div>
 
             <div
-              className={isIncome ? "amount-divider income" : "amount-divider expense"}
+              className={
+                isIncome
+                  ? "amount-divider income"
+                  : "amount-divider expense"
+              }
             />
 
             <div className="add-transaction-row">
@@ -199,7 +268,11 @@ const AddTransactions = () => {
                     <path d="M5.5 5.5H18.5C19.05 5.5 19.5 5.95 19.5 6.5V18.5C19.5 19.05 19.05 19.5 18.5 19.5H5.5C4.95 19.5 4.5 19.05 4.5 18.5V6.5C4.5 5.95 4.95 5.5 5.5 5.5Z" />
                   </svg>
 
-                  <input type="text" defaultValue="20.05.2024" />
+                  <input
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                  />
                 </div>
               </div>
 
@@ -213,7 +286,12 @@ const AddTransactions = () => {
                     <path d="M5 16H12" />
                   </svg>
 
-                  <input type="text" placeholder="Harcama detayını yazın..." />
+                  <input
+                    type="text"
+                    placeholder="Harcama detayını yazın..."
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  />
                 </div>
               </div>
             </div>
@@ -293,17 +371,25 @@ const AddTransactions = () => {
                 {isIncome ? "Gelir" : "Gider"}
               </strong>
               <p>
-                Seçtiğiniz kategori ve ödeme yöntemiyle işlem kaydı oluşturmaya
-                hazırsınız.
+                Seçtiğiniz kategori ve ödeme yöntemiyle işlem kaydı
+                oluşturmaya hazırsınız.
               </p>
             </div>
 
             <div className="add-transaction-actions">
-              <button type="button" className="add-cancel-button">
+              <button
+                type="button"
+                className="add-cancel-button"
+                onClick={() => navigate("/transactions")}
+              >
                 İptal
               </button>
 
-              <button type="button" className="add-save-button">
+              <button
+                type="button"
+                className="add-save-button"
+                onClick={handleSave}
+              >
                 Kaydet
               </button>
             </div>
