@@ -4,1619 +4,4688 @@
     "userId": "u1",
     "tur": "gelir",
     "kategori": "Maaş",
-    "tutar": 25000,
+    "tutar": 30000,
     "aciklama": "Ocak maaşı",
-    "tarih": "2024-01-01"
+    "tarih": "2025-01-01"
   },
   {
     "id": "t2",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Kira",
-    "tutar": 8500,
+    "tutar": 10000,
     "aciklama": "Ocak kirası",
-    "tarih": "2024-01-02"
+    "tarih": "2025-01-02"
   },
   {
     "id": "t3",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Market",
-    "tutar": 1850,
+    "tutar": 2900,
     "aciklama": "Haftalık market",
-    "tarih": "2024-01-05"
+    "tarih": "2025-01-05"
   },
   {
     "id": "t4",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Fatura",
-    "tutar": 420,
+    "tutar": 340,
     "aciklama": "Elektrik faturası",
-    "tarih": "2024-01-07"
+    "tarih": "2025-01-07"
   },
   {
     "id": "t5",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Fatura",
-    "tutar": 180,
+    "tutar": 165,
     "aciklama": "Su faturası",
-    "tarih": "2024-01-08"
+    "tarih": "2025-01-08"
   },
   {
     "id": "t6",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Ulaşım",
-    "tutar": 650,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-01-09"
+    "tutar": 720,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-01-09"
   },
   {
     "id": "t7",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2100,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-01-13"
+    "kategori": "Eğlence",
+    "tutar": 700,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-01-12"
   },
   {
     "id": "t8",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 380,
-    "aciklama": "Sinema ve yemek",
-    "tarih": "2024-01-14"
+    "kategori": "Sağlık",
+    "tutar": 450,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-01-16"
   },
   {
     "id": "t9",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 250,
-    "aciklama": "Eczane",
-    "tarih": "2024-01-16"
+    "kategori": "Eğitim",
+    "tutar": 850,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-01-18"
   },
   {
     "id": "t10",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1650,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-01-20"
+    "kategori": "Giyim",
+    "tutar": 1350,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-01-22"
   },
   {
     "id": "t11",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 1200,
-    "aciklama": "Kışlık kıyafet",
-    "tarih": "2024-01-22"
+    "kategori": "Fatura",
+    "tutar": 399,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-01-25"
   },
   {
     "id": "t12",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-01-25"
+    "kategori": "Diğer",
+    "tutar": 700,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-01-29"
   },
   {
     "id": "t13",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Market",
-    "tutar": 1950,
+    "tutar": 2700,
     "aciklama": "Haftalık market",
-    "tarih": "2024-01-27"
+    "tarih": "2025-01-14"
   },
   {
     "id": "t14",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 3500,
-    "aciklama": "Freelance iş",
-    "tarih": "2024-01-28"
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2800,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-01-20"
   },
   {
     "id": "t15",
     "userId": "u1",
-    "tur": "gider",
-    "kategori": "Eğitim",
-    "tutar": 490,
-    "aciklama": "Online kurs",
-    "tarih": "2024-01-30"
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 7000,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-01-27"
   },
   {
     "id": "t16",
     "userId": "u1",
     "tur": "gelir",
     "kategori": "Maaş",
-    "tutar": 25000,
+    "tutar": 30000,
     "aciklama": "Şubat maaşı",
-    "tarih": "2024-02-01"
+    "tarih": "2025-02-01"
   },
   {
     "id": "t17",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Kira",
-    "tutar": 8500,
+    "tutar": 10000,
     "aciklama": "Şubat kirası",
-    "tarih": "2024-02-02"
+    "tarih": "2025-02-02"
   },
   {
     "id": "t18",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Market",
-    "tutar": 2200,
+    "tutar": 2945,
     "aciklama": "Haftalık market",
-    "tarih": "2024-02-04"
+    "tarih": "2025-02-05"
   },
   {
     "id": "t19",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Fatura",
-    "tutar": 390,
+    "tutar": 365,
     "aciklama": "Elektrik faturası",
-    "tarih": "2024-02-07"
+    "tarih": "2025-02-07"
   },
   {
     "id": "t20",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Fatura",
-    "tutar": 175,
+    "tutar": 190,
     "aciklama": "Su faturası",
-    "tarih": "2024-02-08"
+    "tarih": "2025-02-08"
   },
   {
     "id": "t21",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Ulaşım",
-    "tutar": 580,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-02-10"
+    "tutar": 745,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-02-09"
   },
   {
     "id": "t22",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 800,
-    "aciklama": "Diş hekimi",
-    "tarih": "2024-02-12"
+    "kategori": "Eğlence",
+    "tutar": 725,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-02-12"
   },
   {
     "id": "t23",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1900,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-02-14"
+    "kategori": "Sağlık",
+    "tutar": 475,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-02-16"
   },
   {
     "id": "t24",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 620,
-    "aciklama": "Sevgililer günü yemeği",
-    "tarih": "2024-02-14"
+    "kategori": "Eğitim",
+    "tutar": 875,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-02-18"
   },
   {
     "id": "t25",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-02-25"
+    "kategori": "Giyim",
+    "tutar": 1375,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-02-22"
   },
   {
     "id": "t26",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2050,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-02-18"
+    "kategori": "Fatura",
+    "tutar": 424,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-02-25"
   },
   {
     "id": "t27",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 750,
-    "aciklama": "Ayakkabı",
-    "tarih": "2024-02-20"
+    "kategori": "Diğer",
+    "tutar": 725,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-02-29"
   },
   {
     "id": "t28",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Market",
-    "tutar": 1750,
+    "tutar": 2745,
     "aciklama": "Haftalık market",
-    "tarih": "2024-02-25"
+    "tarih": "2025-02-14"
   },
   {
     "id": "t29",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 2000,
-    "aciklama": "Freelance iş",
-    "tarih": "2024-02-27"
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2845,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-02-20"
   },
   {
     "id": "t30",
     "userId": "u1",
     "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 25000,
-    "aciklama": "Mart maaşı",
-    "tarih": "2024-03-01"
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-02-27"
   },
   {
     "id": "t31",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 8500,
-    "aciklama": "Mart kirası",
-    "tarih": "2024-03-02"
+    "kategori": "Elektronik",
+    "tutar": 6500,
+    "aciklama": "Telefon yenileme",
+    "tarih": "2025-02-28"
   },
   {
     "id": "t32",
     "userId": "u1",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1980,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-03-03"
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 30000,
+    "aciklama": "Mart maaşı",
+    "tarih": "2025-03-01"
   },
   {
     "id": "t33",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 360,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-03-07"
+    "kategori": "Kira",
+    "tutar": 10000,
+    "aciklama": "Mart kirası",
+    "tarih": "2025-03-02"
   },
   {
     "id": "t34",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 160,
-    "aciklama": "Su faturası",
-    "tarih": "2024-03-08"
+    "kategori": "Market",
+    "tutar": 2990,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-03-05"
   },
   {
     "id": "t35",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 700,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-03-09"
+    "kategori": "Fatura",
+    "tutar": 390,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-03-07"
   },
   {
     "id": "t36",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 450,
-    "aciklama": "Tiyatro bileti",
-    "tarih": "2024-03-10"
+    "kategori": "Fatura",
+    "tutar": 215,
+    "aciklama": "Su faturası",
+    "tarih": "2025-03-08"
   },
   {
     "id": "t37",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2300,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-03-11"
+    "kategori": "Ulaşım",
+    "tutar": 770,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-03-09"
   },
   {
     "id": "t38",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 350,
-    "aciklama": "Kan tahlili",
-    "tarih": "2024-03-13"
+    "kategori": "Eğlence",
+    "tutar": 750,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-03-12"
   },
   {
     "id": "t39",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğitim",
-    "tutar": 890,
-    "aciklama": "Kitap ve kırtasiye",
-    "tarih": "2024-03-15"
+    "kategori": "Sağlık",
+    "tutar": 500,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-03-16"
   },
   {
     "id": "t40",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2100,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-03-18"
+    "kategori": "Eğitim",
+    "tutar": 900,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-03-18"
   },
   {
     "id": "t41",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-03-25"
+    "kategori": "Giyim",
+    "tutar": 1400,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-03-22"
   },
   {
     "id": "t42",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1850,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-03-24"
+    "kategori": "Fatura",
+    "tutar": 449,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-03-25"
   },
   {
     "id": "t43",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 4500,
-    "aciklama": "Proje ödemesi",
-    "tarih": "2024-03-28"
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 750,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-03-29"
   },
   {
     "id": "t44",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 1800,
-    "aciklama": "İlkbahar kıyafetleri",
-    "tarih": "2024-03-29"
+    "kategori": "Market",
+    "tutar": 2790,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-03-14"
   },
   {
     "id": "t45",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 27000,
-    "aciklama": "Nisan maaşı (zam)",
-    "tarih": "2024-04-01"
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2890,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-03-20"
   },
   {
     "id": "t46",
     "userId": "u1",
-    "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 9000,
-    "aciklama": "Nisan kirası (zam)",
-    "tarih": "2024-04-02"
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-03-27"
   },
   {
     "id": "t47",
     "userId": "u1",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2400,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-04-04"
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 30000,
+    "aciklama": "Nisan maaşı",
+    "tarih": "2025-04-01"
   },
   {
     "id": "t48",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 340,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-04-07"
+    "kategori": "Kira",
+    "tutar": 10000,
+    "aciklama": "Nisan kirası",
+    "tarih": "2025-04-02"
   },
   {
     "id": "t49",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 155,
-    "aciklama": "Su faturası",
-    "tarih": "2024-04-08"
+    "kategori": "Market",
+    "tutar": 3035,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-04-05"
   },
   {
     "id": "t50",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 720,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-04-09"
+    "kategori": "Fatura",
+    "tutar": 415,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-04-07"
   },
   {
     "id": "t51",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 550,
-    "aciklama": "Konser bileti",
-    "tarih": "2024-04-12"
+    "kategori": "Fatura",
+    "tutar": 240,
+    "aciklama": "Su faturası",
+    "tarih": "2025-04-08"
   },
   {
     "id": "t52",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2150,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-04-14"
+    "kategori": "Ulaşım",
+    "tutar": 795,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-04-09"
   },
   {
     "id": "t53",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 600,
-    "aciklama": "Göz kontrolü + gözlük",
-    "tarih": "2024-04-16"
+    "kategori": "Eğlence",
+    "tutar": 775,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-04-12"
   },
   {
     "id": "t54",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2050,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-04-20"
+    "kategori": "Sağlık",
+    "tutar": 525,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-04-16"
   },
   {
     "id": "t55",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-04-25"
+    "kategori": "Eğitim",
+    "tutar": 925,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-04-18"
   },
   {
     "id": "t56",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1900,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-04-27"
+    "kategori": "Giyim",
+    "tutar": 1425,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-04-22"
   },
   {
     "id": "t57",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 2800,
-    "aciklama": "Danışmanlık ödemesi",
-    "tarih": "2024-04-29"
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 474,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-04-25"
   },
   {
     "id": "t58",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Diğer",
-    "tutar": 1500,
-    "aciklama": "Ev eşyası",
-    "tarih": "2024-04-30"
+    "tutar": 775,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-04-29"
   },
   {
     "id": "t59",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 27000,
-    "aciklama": "Mayıs maaşı",
-    "tarih": "2024-05-01"
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2835,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-04-14"
   },
   {
     "id": "t60",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 9000,
-    "aciklama": "Mayıs kirası",
-    "tarih": "2024-05-02"
+    "kategori": "Market",
+    "tutar": 2935,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-04-20"
   },
   {
     "id": "t61",
     "userId": "u1",
-    "tur": "gider",
-    "kategori": "Market",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
     "tutar": 2500,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-05-05"
+    "aciklama": "Ek gelir",
+    "tarih": "2025-04-27"
   },
   {
     "id": "t62",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 310,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-05-07"
+    "kategori": "Araç Bakımı",
+    "tutar": 18500,
+    "aciklama": "Araç bakım ve sigorta",
+    "tarih": "2025-04-28"
   },
   {
     "id": "t63",
     "userId": "u1",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 148,
-    "aciklama": "Su faturası",
-    "tarih": "2024-05-08"
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 30000,
+    "aciklama": "Mayıs maaşı",
+    "tarih": "2025-05-01"
   },
   {
     "id": "t64",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 680,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-05-09"
+    "kategori": "Kira",
+    "tutar": 10000,
+    "aciklama": "Mayıs kirası",
+    "tarih": "2025-05-02"
   },
   {
     "id": "t65",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 900,
-    "aciklama": "Tatil ön ödemesi",
-    "tarih": "2024-05-11"
+    "kategori": "Market",
+    "tutar": 3080,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-05-05"
   },
   {
     "id": "t66",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2200,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-05-12"
+    "kategori": "Fatura",
+    "tutar": 440,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-05-07"
   },
   {
     "id": "t67",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 280,
-    "aciklama": "Vitamin takviyeleri",
-    "tarih": "2024-05-14"
+    "kategori": "Fatura",
+    "tutar": 265,
+    "aciklama": "Su faturası",
+    "tarih": "2025-05-08"
   },
   {
     "id": "t68",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğitim",
-    "tutar": 750,
-    "aciklama": "Online kurs yenileme",
-    "tarih": "2024-05-16"
+    "kategori": "Ulaşım",
+    "tutar": 820,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-05-09"
   },
   {
     "id": "t69",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2350,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-05-19"
+    "kategori": "Eğlence",
+    "tutar": 800,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-05-12"
   },
   {
     "id": "t70",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 2200,
-    "aciklama": "Yazlık kıyafet alışverişi",
-    "tarih": "2024-05-21"
+    "kategori": "Sağlık",
+    "tutar": 550,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-05-16"
   },
   {
     "id": "t71",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-05-25"
+    "kategori": "Eğitim",
+    "tutar": 950,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-05-18"
   },
   {
     "id": "t72",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2100,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-05-26"
+    "kategori": "Giyim",
+    "tutar": 1450,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-05-22"
   },
   {
     "id": "t73",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 5000,
-    "aciklama": "Yıllık prim ödemesi",
-    "tarih": "2024-05-28"
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 499,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-05-25"
   },
   {
     "id": "t74",
     "userId": "u1",
     "tur": "gider",
     "kategori": "Diğer",
-    "tutar": 850,
-    "aciklama": "Doğum günü hediyesi",
-    "tarih": "2024-05-30"
+    "tutar": 800,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-05-29"
   },
   {
     "id": "t75",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 27000,
-    "aciklama": "Haziran maaşı",
-    "tarih": "2024-06-01"
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2880,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-05-14"
   },
   {
     "id": "t76",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 9000,
-    "aciklama": "Haziran kirası",
-    "tarih": "2024-06-02"
+    "kategori": "Market",
+    "tutar": 2980,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-05-20"
   },
   {
     "id": "t77",
     "userId": "u1",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2600,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-06-03"
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 7000,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-05-27"
   },
   {
     "id": "t78",
     "userId": "u1",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 290,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-06-07"
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 30000,
+    "aciklama": "Haziran maaşı",
+    "tarih": "2025-06-01"
   },
   {
     "id": "t79",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 142,
-    "aciklama": "Su faturası",
-    "tarih": "2024-06-08"
+    "kategori": "Kira",
+    "tutar": 10000,
+    "aciklama": "Haziran kirası",
+    "tarih": "2025-06-02"
   },
   {
     "id": "t80",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 600,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-06-09"
+    "kategori": "Market",
+    "tutar": 3125,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-06-05"
   },
   {
     "id": "t81",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 3500,
-    "aciklama": "Yaz tatili",
-    "tarih": "2024-06-12"
+    "kategori": "Fatura",
+    "tutar": 465,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-06-07"
   },
   {
     "id": "t82",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2400,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-06-14"
+    "kategori": "Fatura",
+    "tutar": 290,
+    "aciklama": "Su faturası",
+    "tarih": "2025-06-08"
   },
   {
     "id": "t83",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 420,
-    "aciklama": "Genel sağlık kontrolü",
-    "tarih": "2024-06-17"
+    "kategori": "Ulaşım",
+    "tutar": 845,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-06-09"
   },
   {
     "id": "t84",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2250,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-06-20"
+    "kategori": "Eğlence",
+    "tutar": 825,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-06-12"
   },
   {
     "id": "t85",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 950,
-    "aciklama": "Spor kıyafeti",
-    "tarih": "2024-06-22"
+    "kategori": "Sağlık",
+    "tutar": 575,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-06-16"
   },
   {
     "id": "t86",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-06-25"
+    "kategori": "Eğitim",
+    "tutar": 975,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-06-18"
   },
   {
     "id": "t87",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2100,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-06-26"
+    "kategori": "Giyim",
+    "tutar": 1475,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-06-22"
   },
   {
     "id": "t88",
     "userId": "u1",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 3200,
-    "aciklama": "Freelance proje",
-    "tarih": "2024-06-27"
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 524,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-06-25"
   },
   {
     "id": "t89",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğitim",
-    "tutar": 1200,
-    "aciklama": "Sertifika programı",
-    "tarih": "2024-06-28"
+    "kategori": "Diğer",
+    "tutar": 825,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-06-29"
   },
   {
     "id": "t90",
     "userId": "u1",
     "tur": "gider",
-    "kategori": "Diğer",
-    "tutar": 650,
-    "aciklama": "Ev tamiri",
-    "tarih": "2024-06-29"
+    "kategori": "Market",
+    "tutar": 2925,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-06-14"
   },
   {
     "id": "t91",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 25000,
-    "aciklama": "Ocak maaşı",
-    "tarih": "2024-01-01"
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3025,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-06-20"
   },
   {
     "id": "t92",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 8500,
-    "aciklama": "Ocak kirası",
-    "tarih": "2024-01-02"
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-06-27"
   },
   {
     "id": "t93",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1850,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-01-05"
+    "kategori": "Tatil",
+    "tutar": 12000,
+    "aciklama": "Tatil ön ödemesi",
+    "tarih": "2025-06-28"
   },
   {
     "id": "t94",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 420,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-01-07"
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 31500,
+    "aciklama": "Temmuz maaşı",
+    "tarih": "2025-07-01"
   },
   {
     "id": "t95",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 180,
-    "aciklama": "Su faturası",
-    "tarih": "2024-01-08"
+    "kategori": "Kira",
+    "tutar": 10000,
+    "aciklama": "Temmuz kirası",
+    "tarih": "2025-07-02"
   },
   {
     "id": "t96",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 650,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-01-09"
+    "kategori": "Market",
+    "tutar": 3170,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-07-05"
   },
   {
     "id": "t97",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2100,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-01-13"
+    "kategori": "Fatura",
+    "tutar": 490,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-07-07"
   },
   {
     "id": "t98",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 380,
-    "aciklama": "Sinema ve yemek",
-    "tarih": "2024-01-14"
+    "kategori": "Fatura",
+    "tutar": 315,
+    "aciklama": "Su faturası",
+    "tarih": "2025-07-08"
   },
   {
     "id": "t99",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 250,
-    "aciklama": "Eczane",
-    "tarih": "2024-01-16"
+    "kategori": "Ulaşım",
+    "tutar": 870,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-07-09"
   },
   {
     "id": "t100",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1650,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-01-20"
+    "kategori": "Eğlence",
+    "tutar": 850,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-07-12"
   },
   {
     "id": "t101",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 1200,
-    "aciklama": "Kışlık kıyafet",
-    "tarih": "2024-01-22"
-  },
-  {
-    "id": "t102",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-01-25"
-  },
-  {
-    "id": "t103",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1950,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-01-27"
-  },
-  {
-    "id": "t104",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 3500,
-    "aciklama": "Freelance iş",
-    "tarih": "2024-01-28"
-  },
-  {
-    "id": "t105",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Eğitim",
-    "tutar": 490,
-    "aciklama": "Online kurs",
-    "tarih": "2024-01-30"
-  },
-  {
-    "id": "t106",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 25000,
-    "aciklama": "Şubat maaşı",
-    "tarih": "2024-02-01"
-  },
-  {
-    "id": "t107",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 8500,
-    "aciklama": "Şubat kirası",
-    "tarih": "2024-02-02"
-  },
-  {
-    "id": "t108",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2200,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-02-04"
-  },
-  {
-    "id": "t109",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 390,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-02-07"
-  },
-  {
-    "id": "t110",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 175,
-    "aciklama": "Su faturası",
-    "tarih": "2024-02-08"
-  },
-  {
-    "id": "t111",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 580,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-02-10"
-  },
-  {
-    "id": "t112",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 800,
-    "aciklama": "Diş hekimi",
-    "tarih": "2024-02-12"
-  },
-  {
-    "id": "t113",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1900,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-02-14"
-  },
-  {
-    "id": "t114",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 620,
-    "aciklama": "Sevgililer günü yemeği",
-    "tarih": "2024-02-14"
-  },
-  {
-    "id": "t115",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-02-25"
-  },
-  {
-    "id": "t116",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2050,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-02-18"
-  },
-  {
-    "id": "t117",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 750,
-    "aciklama": "Ayakkabı",
-    "tarih": "2024-02-20"
-  },
-  {
-    "id": "t118",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1750,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-02-25"
-  },
-  {
-    "id": "t119",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 2000,
-    "aciklama": "Freelance iş",
-    "tarih": "2024-02-27"
-  },
-  {
-    "id": "t120",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 25000,
-    "aciklama": "Mart maaşı",
-    "tarih": "2024-03-01"
-  },
-  {
-    "id": "t121",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 8500,
-    "aciklama": "Mart kirası",
-    "tarih": "2024-03-02"
-  },
-  {
-    "id": "t122",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1980,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-03-03"
-  },
-  {
-    "id": "t123",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 360,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-03-07"
-  },
-  {
-    "id": "t124",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 160,
-    "aciklama": "Su faturası",
-    "tarih": "2024-03-08"
-  },
-  {
-    "id": "t125",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 700,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-03-09"
-  },
-  {
-    "id": "t126",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 450,
-    "aciklama": "Tiyatro bileti",
-    "tarih": "2024-03-10"
-  },
-  {
-    "id": "t127",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2300,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-03-11"
-  },
-  {
-    "id": "t128",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 350,
-    "aciklama": "Kan tahlili",
-    "tarih": "2024-03-13"
-  },
-  {
-    "id": "t129",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Eğitim",
-    "tutar": 890,
-    "aciklama": "Kitap ve kırtasiye",
-    "tarih": "2024-03-15"
-  },
-  {
-    "id": "t130",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2100,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-03-18"
-  },
-  {
-    "id": "t131",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-03-25"
-  },
-  {
-    "id": "t132",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1850,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-03-24"
-  },
-  {
-    "id": "t133",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 4500,
-    "aciklama": "Proje ödemesi",
-    "tarih": "2024-03-28"
-  },
-  {
-    "id": "t134",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 1800,
-    "aciklama": "İlkbahar kıyafetleri",
-    "tarih": "2024-03-29"
-  },
-  {
-    "id": "t135",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 27000,
-    "aciklama": "Nisan maaşı (zam)",
-    "tarih": "2024-04-01"
-  },
-  {
-    "id": "t136",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 9000,
-    "aciklama": "Nisan kirası (zam)",
-    "tarih": "2024-04-02"
-  },
-  {
-    "id": "t137",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2400,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-04-04"
-  },
-  {
-    "id": "t138",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 340,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-04-07"
-  },
-  {
-    "id": "t139",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 155,
-    "aciklama": "Su faturası",
-    "tarih": "2024-04-08"
-  },
-  {
-    "id": "t140",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 720,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-04-09"
-  },
-  {
-    "id": "t141",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 550,
-    "aciklama": "Konser bileti",
-    "tarih": "2024-04-12"
-  },
-  {
-    "id": "t142",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2150,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-04-14"
-  },
-  {
-    "id": "t143",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
     "kategori": "Sağlık",
     "tutar": 600,
-    "aciklama": "Göz kontrolü + gözlük",
-    "tarih": "2024-04-16"
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-07-16"
+  },
+  {
+    "id": "t102",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1000,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-07-18"
+  },
+  {
+    "id": "t103",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1500,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-07-22"
+  },
+  {
+    "id": "t104",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 549,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-07-25"
+  },
+  {
+    "id": "t105",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 850,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-07-29"
+  },
+  {
+    "id": "t106",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2970,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-07-14"
+  },
+  {
+    "id": "t107",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3070,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-07-20"
+  },
+  {
+    "id": "t108",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-07-27"
+  },
+  {
+    "id": "t109",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 31500,
+    "aciklama": "Ağustos maaşı",
+    "tarih": "2025-08-01"
+  },
+  {
+    "id": "t110",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10000,
+    "aciklama": "Ağustos kirası",
+    "tarih": "2025-08-02"
+  },
+  {
+    "id": "t111",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3215,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-08-05"
+  },
+  {
+    "id": "t112",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 515,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-08-07"
+  },
+  {
+    "id": "t113",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 340,
+    "aciklama": "Su faturası",
+    "tarih": "2025-08-08"
+  },
+  {
+    "id": "t114",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 895,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-08-09"
+  },
+  {
+    "id": "t115",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 875,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-08-12"
+  },
+  {
+    "id": "t116",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 625,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-08-16"
+  },
+  {
+    "id": "t117",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1025,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-08-18"
+  },
+  {
+    "id": "t118",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1525,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-08-22"
+  },
+  {
+    "id": "t119",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 574,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-08-25"
+  },
+  {
+    "id": "t120",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 875,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-08-29"
+  },
+  {
+    "id": "t121",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3015,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-08-14"
+  },
+  {
+    "id": "t122",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3115,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-08-20"
+  },
+  {
+    "id": "t123",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-08-27"
+  },
+  {
+    "id": "t124",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ev Eşyası",
+    "tutar": 22000,
+    "aciklama": "Ev eşyası alımı",
+    "tarih": "2025-08-28"
+  },
+  {
+    "id": "t125",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 31500,
+    "aciklama": "Eylül maaşı",
+    "tarih": "2025-09-01"
+  },
+  {
+    "id": "t126",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10600,
+    "aciklama": "Eylül kirası",
+    "tarih": "2025-09-02"
+  },
+  {
+    "id": "t127",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3260,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-09-05"
+  },
+  {
+    "id": "t128",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 540,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-09-07"
+  },
+  {
+    "id": "t129",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 365,
+    "aciklama": "Su faturası",
+    "tarih": "2025-09-08"
+  },
+  {
+    "id": "t130",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 920,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-09-09"
+  },
+  {
+    "id": "t131",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 900,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-09-12"
+  },
+  {
+    "id": "t132",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 650,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-09-16"
+  },
+  {
+    "id": "t133",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1050,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-09-18"
+  },
+  {
+    "id": "t134",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1550,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-09-22"
+  },
+  {
+    "id": "t135",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 599,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-09-25"
+  },
+  {
+    "id": "t136",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 900,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-09-29"
+  },
+  {
+    "id": "t137",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3060,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-09-14"
+  },
+  {
+    "id": "t138",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3160,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-09-20"
+  },
+  {
+    "id": "t139",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 7000,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-09-27"
+  },
+  {
+    "id": "t140",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 31500,
+    "aciklama": "Ekim maaşı",
+    "tarih": "2025-10-01"
+  },
+  {
+    "id": "t141",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10600,
+    "aciklama": "Ekim kirası",
+    "tarih": "2025-10-02"
+  },
+  {
+    "id": "t142",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3305,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-10-05"
+  },
+  {
+    "id": "t143",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 565,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-10-07"
   },
   {
     "id": "t144",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2050,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-04-20"
+    "kategori": "Fatura",
+    "tutar": 390,
+    "aciklama": "Su faturası",
+    "tarih": "2025-10-08"
   },
   {
     "id": "t145",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-04-25"
+    "kategori": "Ulaşım",
+    "tutar": 945,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-10-09"
   },
   {
     "id": "t146",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Market",
-    "tutar": 1900,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-04-27"
+    "kategori": "Eğlence",
+    "tutar": 925,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-10-12"
   },
   {
     "id": "t147",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 2800,
-    "aciklama": "Danışmanlık ödemesi",
-    "tarih": "2024-04-29"
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 675,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-10-16"
   },
   {
     "id": "t148",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Diğer",
-    "tutar": 1500,
-    "aciklama": "Ev eşyası",
-    "tarih": "2024-04-30"
+    "kategori": "Eğitim",
+    "tutar": 1075,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-10-18"
   },
   {
     "id": "t149",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 27000,
-    "aciklama": "Mayıs maaşı",
-    "tarih": "2024-05-01"
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1575,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-10-22"
   },
   {
     "id": "t150",
-    "userId": "u2",
+    "userId": "u1",
     "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 9000,
-    "aciklama": "Mayıs kirası",
-    "tarih": "2024-05-02"
+    "kategori": "Fatura",
+    "tutar": 624,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-10-25"
   },
   {
     "id": "t151",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 925,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-10-29"
+  },
+  {
+    "id": "t152",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3105,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-10-14"
+  },
+  {
+    "id": "t153",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3205,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-10-20"
+  },
+  {
+    "id": "t154",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-10-27"
+  },
+  {
+    "id": "t155",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 8500,
+    "aciklama": "Sağlık operasyonu",
+    "tarih": "2025-10-28"
+  },
+  {
+    "id": "t156",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 31500,
+    "aciklama": "Kasım maaşı",
+    "tarih": "2025-11-01"
+  },
+  {
+    "id": "t157",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10600,
+    "aciklama": "Kasım kirası",
+    "tarih": "2025-11-02"
+  },
+  {
+    "id": "t158",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3350,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-11-05"
+  },
+  {
+    "id": "t159",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 590,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-11-07"
+  },
+  {
+    "id": "t160",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 415,
+    "aciklama": "Su faturası",
+    "tarih": "2025-11-08"
+  },
+  {
+    "id": "t161",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 970,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-11-09"
+  },
+  {
+    "id": "t162",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 950,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-11-12"
+  },
+  {
+    "id": "t163",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 700,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-11-16"
+  },
+  {
+    "id": "t164",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1100,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-11-18"
+  },
+  {
+    "id": "t165",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1600,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-11-22"
+  },
+  {
+    "id": "t166",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 649,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-11-25"
+  },
+  {
+    "id": "t167",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 950,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-11-29"
+  },
+  {
+    "id": "t168",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3150,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-11-14"
+  },
+  {
+    "id": "t169",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3250,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-11-20"
+  },
+  {
+    "id": "t170",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-11-27"
+  },
+  {
+    "id": "t171",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 31500,
+    "aciklama": "Aralık maaşı",
+    "tarih": "2025-12-01"
+  },
+  {
+    "id": "t172",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10600,
+    "aciklama": "Aralık kirası",
+    "tarih": "2025-12-02"
+  },
+  {
+    "id": "t173",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3395,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-12-05"
+  },
+  {
+    "id": "t174",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 615,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-12-07"
+  },
+  {
+    "id": "t175",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 440,
+    "aciklama": "Su faturası",
+    "tarih": "2025-12-08"
+  },
+  {
+    "id": "t176",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 995,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-12-09"
+  },
+  {
+    "id": "t177",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 975,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-12-12"
+  },
+  {
+    "id": "t178",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 725,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-12-16"
+  },
+  {
+    "id": "t179",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1125,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-12-18"
+  },
+  {
+    "id": "t180",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1625,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-12-22"
+  },
+  {
+    "id": "t181",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 674,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-12-25"
+  },
+  {
+    "id": "t182",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 975,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-12-29"
+  },
+  {
+    "id": "t183",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3195,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-12-14"
+  },
+  {
+    "id": "t184",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3295,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-12-20"
+  },
+  {
+    "id": "t185",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-12-27"
+  },
+  {
+    "id": "t186",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 33000,
+    "aciklama": "Ocak maaşı",
+    "tarih": "2026-01-01"
+  },
+  {
+    "id": "t187",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10600,
+    "aciklama": "Ocak kirası",
+    "tarih": "2026-01-02"
+  },
+  {
+    "id": "t188",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3440,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-01-05"
+  },
+  {
+    "id": "t189",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 640,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-01-07"
+  },
+  {
+    "id": "t190",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 465,
+    "aciklama": "Su faturası",
+    "tarih": "2026-01-08"
+  },
+  {
+    "id": "t191",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1020,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-01-09"
+  },
+  {
+    "id": "t192",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1000,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-01-12"
+  },
+  {
+    "id": "t193",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 750,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-01-16"
+  },
+  {
+    "id": "t194",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1150,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-01-18"
+  },
+  {
+    "id": "t195",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1650,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-01-22"
+  },
+  {
+    "id": "t196",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 699,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-01-25"
+  },
+  {
+    "id": "t197",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1000,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-01-29"
+  },
+  {
+    "id": "t198",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3240,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-01-14"
+  },
+  {
+    "id": "t199",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3340,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-01-20"
+  },
+  {
+    "id": "t200",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 7000,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-01-27"
+  },
+  {
+    "id": "t201",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 33000,
+    "aciklama": "Şubat maaşı",
+    "tarih": "2026-02-01"
+  },
+  {
+    "id": "t202",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10600,
+    "aciklama": "Şubat kirası",
+    "tarih": "2026-02-02"
+  },
+  {
+    "id": "t203",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3485,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-02-05"
+  },
+  {
+    "id": "t204",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 665,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-02-07"
+  },
+  {
+    "id": "t205",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 490,
+    "aciklama": "Su faturası",
+    "tarih": "2026-02-08"
+  },
+  {
+    "id": "t206",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1045,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-02-09"
+  },
+  {
+    "id": "t207",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1025,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-02-12"
+  },
+  {
+    "id": "t208",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 775,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-02-16"
+  },
+  {
+    "id": "t209",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1175,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-02-18"
+  },
+  {
+    "id": "t210",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1675,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-02-22"
+  },
+  {
+    "id": "t211",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 724,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-02-25"
+  },
+  {
+    "id": "t212",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1025,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-02-29"
+  },
+  {
+    "id": "t213",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3285,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-02-14"
+  },
+  {
+    "id": "t214",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3385,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-02-20"
+  },
+  {
+    "id": "t215",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-02-27"
+  },
+  {
+    "id": "t216",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 33000,
+    "aciklama": "Mart maaşı",
+    "tarih": "2026-03-01"
+  },
+  {
+    "id": "t217",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10600,
+    "aciklama": "Mart kirası",
+    "tarih": "2026-03-02"
+  },
+  {
+    "id": "t218",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3530,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-03-05"
+  },
+  {
+    "id": "t219",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 690,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-03-07"
+  },
+  {
+    "id": "t220",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 515,
+    "aciklama": "Su faturası",
+    "tarih": "2026-03-08"
+  },
+  {
+    "id": "t221",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1070,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-03-09"
+  },
+  {
+    "id": "t222",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1050,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-03-12"
+  },
+  {
+    "id": "t223",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 800,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-03-16"
+  },
+  {
+    "id": "t224",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1200,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-03-18"
+  },
+  {
+    "id": "t225",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1700,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-03-22"
+  },
+  {
+    "id": "t226",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 749,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-03-25"
+  },
+  {
+    "id": "t227",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1050,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-03-29"
+  },
+  {
+    "id": "t228",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3330,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-03-14"
+  },
+  {
+    "id": "t229",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3430,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-03-20"
+  },
+  {
+    "id": "t230",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-03-27"
+  },
+  {
+    "id": "t231",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 33000,
+    "aciklama": "Nisan maaşı",
+    "tarih": "2026-04-01"
+  },
+  {
+    "id": "t232",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 10600,
+    "aciklama": "Nisan kirası",
+    "tarih": "2026-04-02"
+  },
+  {
+    "id": "t233",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3575,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-04-05"
+  },
+  {
+    "id": "t234",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 715,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-04-07"
+  },
+  {
+    "id": "t235",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 540,
+    "aciklama": "Su faturası",
+    "tarih": "2026-04-08"
+  },
+  {
+    "id": "t236",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1095,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-04-09"
+  },
+  {
+    "id": "t237",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1075,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-04-12"
+  },
+  {
+    "id": "t238",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 825,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-04-16"
+  },
+  {
+    "id": "t239",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1225,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-04-18"
+  },
+  {
+    "id": "t240",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1725,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-04-22"
+  },
+  {
+    "id": "t241",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 774,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-04-25"
+  },
+  {
+    "id": "t242",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1075,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-04-29"
+  },
+  {
+    "id": "t243",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3375,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-04-14"
+  },
+  {
+    "id": "t244",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3475,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-04-20"
+  },
+  {
+    "id": "t245",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 2500,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-04-27"
+  },
+  {
+    "id": "t246",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Beyaz Eşya",
+    "tutar": 15000,
+    "aciklama": "Beyaz eşya değişimi",
+    "tarih": "2026-04-28"
+  },
+  {
+    "id": "t247",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 33000,
+    "aciklama": "Mayıs maaşı",
+    "tarih": "2026-05-01"
+  },
+  {
+    "id": "t248",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 11200,
+    "aciklama": "Mayıs kirası",
+    "tarih": "2026-05-02"
+  },
+  {
+    "id": "t249",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3620,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-05-05"
+  },
+  {
+    "id": "t250",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 740,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-05-07"
+  },
+  {
+    "id": "t251",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 565,
+    "aciklama": "Su faturası",
+    "tarih": "2026-05-08"
+  },
+  {
+    "id": "t252",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1120,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-05-09"
+  },
+  {
+    "id": "t253",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1100,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-05-12"
+  },
+  {
+    "id": "t254",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 850,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-05-16"
+  },
+  {
+    "id": "t255",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1250,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-05-18"
+  },
+  {
+    "id": "t256",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1750,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-05-22"
+  },
+  {
+    "id": "t257",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 799,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-05-25"
+  },
+  {
+    "id": "t258",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1100,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-05-29"
+  },
+  {
+    "id": "t259",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3420,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-05-14"
+  },
+  {
+    "id": "t260",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3520,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-05-20"
+  },
+  {
+    "id": "t261",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 7000,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-05-27"
+  },
+  {
+    "id": "t262",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 26500,
+    "aciklama": "Ocak maaşı",
+    "tarih": "2025-01-01"
+  },
+  {
+    "id": "t263",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 8600,
+    "aciklama": "Ocak kirası",
+    "tarih": "2025-01-02"
+  },
+  {
+    "id": "t264",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Market",
     "tutar": 2500,
     "aciklama": "Haftalık market",
-    "tarih": "2024-05-05"
+    "tarih": "2025-01-05"
   },
   {
-    "id": "t152",
+    "id": "t265",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Fatura",
-    "tutar": 310,
+    "tutar": 340,
     "aciklama": "Elektrik faturası",
-    "tarih": "2024-05-07"
+    "tarih": "2025-01-07"
   },
   {
-    "id": "t153",
+    "id": "t266",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Fatura",
-    "tutar": 148,
+    "tutar": 165,
     "aciklama": "Su faturası",
-    "tarih": "2024-05-08"
+    "tarih": "2025-01-08"
   },
   {
-    "id": "t154",
+    "id": "t267",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Ulaşım",
-    "tutar": 680,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-05-09"
+    "tutar": 720,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-01-09"
   },
   {
-    "id": "t155",
+    "id": "t268",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Eğlence",
-    "tutar": 900,
-    "aciklama": "Tatil ön ödemesi",
-    "tarih": "2024-05-11"
+    "tutar": 700,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-01-12"
   },
   {
-    "id": "t156",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2200,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-05-12"
-  },
-  {
-    "id": "t157",
+    "id": "t269",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Sağlık",
-    "tutar": 280,
-    "aciklama": "Vitamin takviyeleri",
-    "tarih": "2024-05-14"
+    "tutar": 450,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-01-16"
   },
   {
-    "id": "t158",
+    "id": "t270",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Eğitim",
-    "tutar": 750,
-    "aciklama": "Online kurs yenileme",
-    "tarih": "2024-05-16"
+    "tutar": 850,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-01-18"
   },
   {
-    "id": "t159",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2350,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-05-19"
-  },
-  {
-    "id": "t160",
+    "id": "t271",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Giyim",
-    "tutar": 2200,
-    "aciklama": "Yazlık kıyafet alışverişi",
-    "tarih": "2024-05-21"
+    "tutar": 1350,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-01-22"
   },
   {
-    "id": "t161",
+    "id": "t272",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Fatura",
     "tutar": 399,
     "aciklama": "Telefon faturası",
-    "tarih": "2024-05-25"
+    "tarih": "2025-01-25"
   },
   {
-    "id": "t162",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2100,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-05-26"
-  },
-  {
-    "id": "t163",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Ek Gelir",
-    "tutar": 5000,
-    "aciklama": "Yıllık prim ödemesi",
-    "tarih": "2024-05-28"
-  },
-  {
-    "id": "t164",
+    "id": "t273",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Diğer",
-    "tutar": 850,
-    "aciklama": "Doğum günü hediyesi",
-    "tarih": "2024-05-30"
+    "tutar": 700,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-01-29"
   },
   {
-    "id": "t165",
-    "userId": "u2",
-    "tur": "gelir",
-    "kategori": "Maaş",
-    "tutar": 27000,
-    "aciklama": "Haziran maaşı",
-    "tarih": "2024-06-01"
-  },
-  {
-    "id": "t166",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Kira",
-    "tutar": 9000,
-    "aciklama": "Haziran kirası",
-    "tarih": "2024-06-02"
-  },
-  {
-    "id": "t167",
+    "id": "t274",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Market",
-    "tutar": 2600,
+    "tutar": 2300,
     "aciklama": "Haftalık market",
-    "tarih": "2024-06-03"
+    "tarih": "2025-01-14"
   },
   {
-    "id": "t168",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 290,
-    "aciklama": "Elektrik faturası",
-    "tarih": "2024-06-07"
-  },
-  {
-    "id": "t169",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 142,
-    "aciklama": "Su faturası",
-    "tarih": "2024-06-08"
-  },
-  {
-    "id": "t170",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Ulaşım",
-    "tutar": 600,
-    "aciklama": "Akbil yükleme",
-    "tarih": "2024-06-09"
-  },
-  {
-    "id": "t171",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Eğlence",
-    "tutar": 3500,
-    "aciklama": "Yaz tatili",
-    "tarih": "2024-06-12"
-  },
-  {
-    "id": "t172",
+    "id": "t275",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Market",
     "tutar": 2400,
     "aciklama": "Haftalık market",
-    "tarih": "2024-06-14"
+    "tarih": "2025-01-20"
   },
   {
-    "id": "t173",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Sağlık",
-    "tutar": 420,
-    "aciklama": "Genel sağlık kontrolü",
-    "tarih": "2024-06-17"
-  },
-  {
-    "id": "t174",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2250,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-06-20"
-  },
-  {
-    "id": "t175",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Giyim",
-    "tutar": 950,
-    "aciklama": "Spor kıyafeti",
-    "tarih": "2024-06-22"
-  },
-  {
-    "id": "t176",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Fatura",
-    "tutar": 399,
-    "aciklama": "Telefon faturası",
-    "tarih": "2024-06-25"
-  },
-  {
-    "id": "t177",
-    "userId": "u2",
-    "tur": "gider",
-    "kategori": "Market",
-    "tutar": 2100,
-    "aciklama": "Haftalık market",
-    "tarih": "2024-06-26"
-  },
-  {
-    "id": "t178",
+    "id": "t276",
     "userId": "u2",
     "tur": "gelir",
     "kategori": "Ek Gelir",
-    "tutar": 3200,
-    "aciklama": "Freelance proje",
-    "tarih": "2024-06-27"
+    "tutar": 6300,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-01-27"
   },
   {
-    "id": "t179",
+    "id": "t277",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 26500,
+    "aciklama": "Şubat maaşı",
+    "tarih": "2025-02-01"
+  },
+  {
+    "id": "t278",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 8600,
+    "aciklama": "Şubat kirası",
+    "tarih": "2025-02-02"
+  },
+  {
+    "id": "t279",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2545,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-02-05"
+  },
+  {
+    "id": "t280",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 365,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-02-07"
+  },
+  {
+    "id": "t281",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 190,
+    "aciklama": "Su faturası",
+    "tarih": "2025-02-08"
+  },
+  {
+    "id": "t282",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 745,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-02-09"
+  },
+  {
+    "id": "t283",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 725,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-02-12"
+  },
+  {
+    "id": "t284",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 475,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-02-16"
+  },
+  {
+    "id": "t285",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 875,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-02-18"
+  },
+  {
+    "id": "t286",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1375,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-02-22"
+  },
+  {
+    "id": "t287",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 424,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-02-25"
+  },
+  {
+    "id": "t288",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 725,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-02-29"
+  },
+  {
+    "id": "t289",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2345,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-02-14"
+  },
+  {
+    "id": "t290",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2445,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-02-20"
+  },
+  {
+    "id": "t291",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-02-27"
+  },
+  {
+    "id": "t292",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 26500,
+    "aciklama": "Mart maaşı",
+    "tarih": "2025-03-01"
+  },
+  {
+    "id": "t293",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 8600,
+    "aciklama": "Mart kirası",
+    "tarih": "2025-03-02"
+  },
+  {
+    "id": "t294",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2590,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-03-05"
+  },
+  {
+    "id": "t295",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 390,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-03-07"
+  },
+  {
+    "id": "t296",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 215,
+    "aciklama": "Su faturası",
+    "tarih": "2025-03-08"
+  },
+  {
+    "id": "t297",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 770,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-03-09"
+  },
+  {
+    "id": "t298",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 750,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-03-12"
+  },
+  {
+    "id": "t299",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 500,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-03-16"
+  },
+  {
+    "id": "t300",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 900,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-03-18"
+  },
+  {
+    "id": "t301",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1400,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-03-22"
+  },
+  {
+    "id": "t302",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 449,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-03-25"
+  },
+  {
+    "id": "t303",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 750,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-03-29"
+  },
+  {
+    "id": "t304",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2390,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-03-14"
+  },
+  {
+    "id": "t305",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2490,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-03-20"
+  },
+  {
+    "id": "t306",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-03-27"
+  },
+  {
+    "id": "t307",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Tamirat",
+    "tutar": 11000,
+    "aciklama": "Bilgisayar tamiri",
+    "tarih": "2025-03-28"
+  },
+  {
+    "id": "t308",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 26500,
+    "aciklama": "Nisan maaşı",
+    "tarih": "2025-04-01"
+  },
+  {
+    "id": "t309",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 8600,
+    "aciklama": "Nisan kirası",
+    "tarih": "2025-04-02"
+  },
+  {
+    "id": "t310",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2635,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-04-05"
+  },
+  {
+    "id": "t311",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 415,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-04-07"
+  },
+  {
+    "id": "t312",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 240,
+    "aciklama": "Su faturası",
+    "tarih": "2025-04-08"
+  },
+  {
+    "id": "t313",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 795,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-04-09"
+  },
+  {
+    "id": "t314",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 775,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-04-12"
+  },
+  {
+    "id": "t315",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 525,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-04-16"
+  },
+  {
+    "id": "t316",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 925,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-04-18"
+  },
+  {
+    "id": "t317",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1425,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-04-22"
+  },
+  {
+    "id": "t318",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 474,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-04-25"
+  },
+  {
+    "id": "t319",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 775,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-04-29"
+  },
+  {
+    "id": "t320",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2435,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-04-14"
+  },
+  {
+    "id": "t321",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2535,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-04-20"
+  },
+  {
+    "id": "t322",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-04-27"
+  },
+  {
+    "id": "t323",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 26500,
+    "aciklama": "Mayıs maaşı",
+    "tarih": "2025-05-01"
+  },
+  {
+    "id": "t324",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 8600,
+    "aciklama": "Mayıs kirası",
+    "tarih": "2025-05-02"
+  },
+  {
+    "id": "t325",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2680,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-05-05"
+  },
+  {
+    "id": "t326",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 440,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-05-07"
+  },
+  {
+    "id": "t327",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 265,
+    "aciklama": "Su faturası",
+    "tarih": "2025-05-08"
+  },
+  {
+    "id": "t328",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 820,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-05-09"
+  },
+  {
+    "id": "t329",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 800,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-05-12"
+  },
+  {
+    "id": "t330",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 550,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-05-16"
+  },
+  {
+    "id": "t331",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 950,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-05-18"
+  },
+  {
+    "id": "t332",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1450,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-05-22"
+  },
+  {
+    "id": "t333",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 499,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-05-25"
+  },
+  {
+    "id": "t334",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 800,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-05-29"
+  },
+  {
+    "id": "t335",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2480,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-05-14"
+  },
+  {
+    "id": "t336",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2580,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-05-20"
+  },
+  {
+    "id": "t337",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 6300,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-05-27"
+  },
+  {
+    "id": "t338",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Taşınma",
+    "tutar": 15500,
+    "aciklama": "Taşınma masrafı",
+    "tarih": "2025-05-28"
+  },
+  {
+    "id": "t339",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 26500,
+    "aciklama": "Haziran maaşı",
+    "tarih": "2025-06-01"
+  },
+  {
+    "id": "t340",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 8600,
+    "aciklama": "Haziran kirası",
+    "tarih": "2025-06-02"
+  },
+  {
+    "id": "t341",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2725,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-06-05"
+  },
+  {
+    "id": "t342",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 465,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-06-07"
+  },
+  {
+    "id": "t343",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 290,
+    "aciklama": "Su faturası",
+    "tarih": "2025-06-08"
+  },
+  {
+    "id": "t344",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 845,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-06-09"
+  },
+  {
+    "id": "t345",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 825,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-06-12"
+  },
+  {
+    "id": "t346",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 575,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-06-16"
+  },
+  {
+    "id": "t347",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 975,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-06-18"
+  },
+  {
+    "id": "t348",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1475,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-06-22"
+  },
+  {
+    "id": "t349",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 524,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-06-25"
+  },
+  {
+    "id": "t350",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 825,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-06-29"
+  },
+  {
+    "id": "t351",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2525,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-06-14"
+  },
+  {
+    "id": "t352",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2625,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-06-20"
+  },
+  {
+    "id": "t353",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-06-27"
+  },
+  {
+    "id": "t354",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 28000,
+    "aciklama": "Temmuz maaşı",
+    "tarih": "2025-07-01"
+  },
+  {
+    "id": "t355",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 8600,
+    "aciklama": "Temmuz kirası",
+    "tarih": "2025-07-02"
+  },
+  {
+    "id": "t356",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2770,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-07-05"
+  },
+  {
+    "id": "t357",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 490,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-07-07"
+  },
+  {
+    "id": "t358",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 315,
+    "aciklama": "Su faturası",
+    "tarih": "2025-07-08"
+  },
+  {
+    "id": "t359",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 870,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-07-09"
+  },
+  {
+    "id": "t360",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 850,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-07-12"
+  },
+  {
+    "id": "t361",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 600,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-07-16"
+  },
+  {
+    "id": "t362",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1000,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-07-18"
+  },
+  {
+    "id": "t363",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1500,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-07-22"
+  },
+  {
+    "id": "t364",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 549,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-07-25"
+  },
+  {
+    "id": "t365",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 850,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-07-29"
+  },
+  {
+    "id": "t366",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2570,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-07-14"
+  },
+  {
+    "id": "t367",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2670,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-07-20"
+  },
+  {
+    "id": "t368",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-07-27"
+  },
+  {
+    "id": "t369",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Tatil",
+    "tutar": 9000,
+    "aciklama": "Yaz tatili",
+    "tarih": "2025-07-28"
+  },
+  {
+    "id": "t370",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 28000,
+    "aciklama": "Ağustos maaşı",
+    "tarih": "2025-08-01"
+  },
+  {
+    "id": "t371",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 8600,
+    "aciklama": "Ağustos kirası",
+    "tarih": "2025-08-02"
+  },
+  {
+    "id": "t372",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2815,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-08-05"
+  },
+  {
+    "id": "t373",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 515,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-08-07"
+  },
+  {
+    "id": "t374",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 340,
+    "aciklama": "Su faturası",
+    "tarih": "2025-08-08"
+  },
+  {
+    "id": "t375",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 895,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-08-09"
+  },
+  {
+    "id": "t376",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 875,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-08-12"
+  },
+  {
+    "id": "t377",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 625,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-08-16"
+  },
+  {
+    "id": "t378",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1025,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-08-18"
+  },
+  {
+    "id": "t379",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1525,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-08-22"
+  },
+  {
+    "id": "t380",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 574,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-08-25"
+  },
+  {
+    "id": "t381",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 875,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-08-29"
+  },
+  {
+    "id": "t382",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2615,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-08-14"
+  },
+  {
+    "id": "t383",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2715,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-08-20"
+  },
+  {
+    "id": "t384",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-08-27"
+  },
+  {
+    "id": "t385",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 28000,
+    "aciklama": "Eylül maaşı",
+    "tarih": "2025-09-01"
+  },
+  {
+    "id": "t386",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9200,
+    "aciklama": "Eylül kirası",
+    "tarih": "2025-09-02"
+  },
+  {
+    "id": "t387",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2860,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-09-05"
+  },
+  {
+    "id": "t388",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 540,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-09-07"
+  },
+  {
+    "id": "t389",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 365,
+    "aciklama": "Su faturası",
+    "tarih": "2025-09-08"
+  },
+  {
+    "id": "t390",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 920,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-09-09"
+  },
+  {
+    "id": "t391",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 900,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-09-12"
+  },
+  {
+    "id": "t392",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 650,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-09-16"
+  },
+  {
+    "id": "t393",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1050,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-09-18"
+  },
+  {
+    "id": "t394",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1550,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-09-22"
+  },
+  {
+    "id": "t395",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 599,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-09-25"
+  },
+  {
+    "id": "t396",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 900,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-09-29"
+  },
+  {
+    "id": "t397",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2660,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-09-14"
+  },
+  {
+    "id": "t398",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2760,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-09-20"
+  },
+  {
+    "id": "t399",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 6300,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-09-27"
+  },
+  {
+    "id": "t400",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 28000,
+    "aciklama": "Ekim maaşı",
+    "tarih": "2025-10-01"
+  },
+  {
+    "id": "t401",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9200,
+    "aciklama": "Ekim kirası",
+    "tarih": "2025-10-02"
+  },
+  {
+    "id": "t402",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2905,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-10-05"
+  },
+  {
+    "id": "t403",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 565,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-10-07"
+  },
+  {
+    "id": "t404",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 390,
+    "aciklama": "Su faturası",
+    "tarih": "2025-10-08"
+  },
+  {
+    "id": "t405",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 945,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-10-09"
+  },
+  {
+    "id": "t406",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 925,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-10-12"
+  },
+  {
+    "id": "t407",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 675,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-10-16"
+  },
+  {
+    "id": "t408",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1075,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-10-18"
+  },
+  {
+    "id": "t409",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1575,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-10-22"
+  },
+  {
+    "id": "t410",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 624,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-10-25"
+  },
+  {
+    "id": "t411",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 925,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-10-29"
+  },
+  {
+    "id": "t412",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2705,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-10-14"
+  },
+  {
+    "id": "t413",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2805,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-10-20"
+  },
+  {
+    "id": "t414",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-10-27"
+  },
+  {
+    "id": "t415",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 13500,
+    "aciklama": "Diş tedavisi",
+    "tarih": "2025-10-28"
+  },
+  {
+    "id": "t416",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 28000,
+    "aciklama": "Kasım maaşı",
+    "tarih": "2025-11-01"
+  },
+  {
+    "id": "t417",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9200,
+    "aciklama": "Kasım kirası",
+    "tarih": "2025-11-02"
+  },
+  {
+    "id": "t418",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2950,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-11-05"
+  },
+  {
+    "id": "t419",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 590,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-11-07"
+  },
+  {
+    "id": "t420",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 415,
+    "aciklama": "Su faturası",
+    "tarih": "2025-11-08"
+  },
+  {
+    "id": "t421",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 970,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-11-09"
+  },
+  {
+    "id": "t422",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 950,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-11-12"
+  },
+  {
+    "id": "t423",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 700,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-11-16"
+  },
+  {
+    "id": "t424",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1100,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-11-18"
+  },
+  {
+    "id": "t425",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1600,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-11-22"
+  },
+  {
+    "id": "t426",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 649,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-11-25"
+  },
+  {
+    "id": "t427",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 950,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-11-29"
+  },
+  {
+    "id": "t428",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2750,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-11-14"
+  },
+  {
+    "id": "t429",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2850,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-11-20"
+  },
+  {
+    "id": "t430",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-11-27"
+  },
+  {
+    "id": "t431",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 28000,
+    "aciklama": "Aralık maaşı",
+    "tarih": "2025-12-01"
+  },
+  {
+    "id": "t432",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9200,
+    "aciklama": "Aralık kirası",
+    "tarih": "2025-12-02"
+  },
+  {
+    "id": "t433",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2995,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-12-05"
+  },
+  {
+    "id": "t434",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 615,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2025-12-07"
+  },
+  {
+    "id": "t435",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 440,
+    "aciklama": "Su faturası",
+    "tarih": "2025-12-08"
+  },
+  {
+    "id": "t436",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 995,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2025-12-09"
+  },
+  {
+    "id": "t437",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 975,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2025-12-12"
+  },
+  {
+    "id": "t438",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 725,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2025-12-16"
+  },
+  {
+    "id": "t439",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1125,
+    "aciklama": "Online eğitim",
+    "tarih": "2025-12-18"
+  },
+  {
+    "id": "t440",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1625,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2025-12-22"
+  },
+  {
+    "id": "t441",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 674,
+    "aciklama": "Telefon faturası",
+    "tarih": "2025-12-25"
+  },
+  {
+    "id": "t442",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 975,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2025-12-29"
+  },
+  {
+    "id": "t443",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2795,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-12-14"
+  },
+  {
+    "id": "t444",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2895,
+    "aciklama": "Haftalık market",
+    "tarih": "2025-12-20"
+  },
+  {
+    "id": "t445",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2025-12-27"
+  },
+  {
+    "id": "t446",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 29500,
+    "aciklama": "Ocak maaşı",
+    "tarih": "2026-01-01"
+  },
+  {
+    "id": "t447",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9200,
+    "aciklama": "Ocak kirası",
+    "tarih": "2026-01-02"
+  },
+  {
+    "id": "t448",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3040,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-01-05"
+  },
+  {
+    "id": "t449",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 640,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-01-07"
+  },
+  {
+    "id": "t450",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 465,
+    "aciklama": "Su faturası",
+    "tarih": "2026-01-08"
+  },
+  {
+    "id": "t451",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1020,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-01-09"
+  },
+  {
+    "id": "t452",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1000,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-01-12"
+  },
+  {
+    "id": "t453",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 750,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-01-16"
+  },
+  {
+    "id": "t454",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1150,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-01-18"
+  },
+  {
+    "id": "t455",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1650,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-01-22"
+  },
+  {
+    "id": "t456",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 699,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-01-25"
+  },
+  {
+    "id": "t457",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1000,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-01-29"
+  },
+  {
+    "id": "t458",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2840,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-01-14"
+  },
+  {
+    "id": "t459",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2940,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-01-20"
+  },
+  {
+    "id": "t460",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 6300,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-01-27"
+  },
+  {
+    "id": "t461",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 29500,
+    "aciklama": "Şubat maaşı",
+    "tarih": "2026-02-01"
+  },
+  {
+    "id": "t462",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9200,
+    "aciklama": "Şubat kirası",
+    "tarih": "2026-02-02"
+  },
+  {
+    "id": "t463",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3085,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-02-05"
+  },
+  {
+    "id": "t464",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 665,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-02-07"
+  },
+  {
+    "id": "t465",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 490,
+    "aciklama": "Su faturası",
+    "tarih": "2026-02-08"
+  },
+  {
+    "id": "t466",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1045,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-02-09"
+  },
+  {
+    "id": "t467",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1025,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-02-12"
+  },
+  {
+    "id": "t468",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 775,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-02-16"
+  },
+  {
+    "id": "t469",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1175,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-02-18"
+  },
+  {
+    "id": "t470",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1675,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-02-22"
+  },
+  {
+    "id": "t471",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 724,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-02-25"
+  },
+  {
+    "id": "t472",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1025,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-02-29"
+  },
+  {
+    "id": "t473",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2885,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-02-14"
+  },
+  {
+    "id": "t474",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2985,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-02-20"
+  },
+  {
+    "id": "t475",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-02-27"
+  },
+  {
+    "id": "t476",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 29500,
+    "aciklama": "Mart maaşı",
+    "tarih": "2026-03-01"
+  },
+  {
+    "id": "t477",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9200,
+    "aciklama": "Mart kirası",
+    "tarih": "2026-03-02"
+  },
+  {
+    "id": "t478",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3130,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-03-05"
+  },
+  {
+    "id": "t479",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 690,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-03-07"
+  },
+  {
+    "id": "t480",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 515,
+    "aciklama": "Su faturası",
+    "tarih": "2026-03-08"
+  },
+  {
+    "id": "t481",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1070,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-03-09"
+  },
+  {
+    "id": "t482",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1050,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-03-12"
+  },
+  {
+    "id": "t483",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 800,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-03-16"
+  },
+  {
+    "id": "t484",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Eğitim",
     "tutar": 1200,
-    "aciklama": "Sertifika programı",
-    "tarih": "2024-06-28"
+    "aciklama": "Online eğitim",
+    "tarih": "2026-03-18"
   },
   {
-    "id": "t180",
+    "id": "t485",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1700,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-03-22"
+  },
+  {
+    "id": "t486",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 749,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-03-25"
+  },
+  {
+    "id": "t487",
     "userId": "u2",
     "tur": "gider",
     "kategori": "Diğer",
-    "tutar": 650,
-    "aciklama": "Ev tamiri",
-    "tarih": "2024-06-29"
+    "tutar": 1050,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-03-29"
+  },
+  {
+    "id": "t488",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2930,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-03-14"
+  },
+  {
+    "id": "t489",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3030,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-03-20"
+  },
+  {
+    "id": "t490",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-03-27"
+  },
+  {
+    "id": "t491",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Araç Bakımı",
+    "tutar": 12000,
+    "aciklama": "Araç lastik değişimi",
+    "tarih": "2026-03-28"
+  },
+  {
+    "id": "t492",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 29500,
+    "aciklama": "Nisan maaşı",
+    "tarih": "2026-04-01"
+  },
+  {
+    "id": "t493",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9200,
+    "aciklama": "Nisan kirası",
+    "tarih": "2026-04-02"
+  },
+  {
+    "id": "t494",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3175,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-04-05"
+  },
+  {
+    "id": "t495",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 715,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-04-07"
+  },
+  {
+    "id": "t496",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 540,
+    "aciklama": "Su faturası",
+    "tarih": "2026-04-08"
+  },
+  {
+    "id": "t497",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1095,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-04-09"
+  },
+  {
+    "id": "t498",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1075,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-04-12"
+  },
+  {
+    "id": "t499",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 825,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-04-16"
+  },
+  {
+    "id": "t500",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1225,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-04-18"
+  },
+  {
+    "id": "t501",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1725,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-04-22"
+  },
+  {
+    "id": "t502",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 774,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-04-25"
+  },
+  {
+    "id": "t503",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1075,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-04-29"
+  },
+  {
+    "id": "t504",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 2975,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-04-14"
+  },
+  {
+    "id": "t505",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3075,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-04-20"
+  },
+  {
+    "id": "t506",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 1800,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-04-27"
+  },
+  {
+    "id": "t507",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 29500,
+    "aciklama": "Mayıs maaşı",
+    "tarih": "2026-05-01"
+  },
+  {
+    "id": "t508",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Kira",
+    "tutar": 9800,
+    "aciklama": "Mayıs kirası",
+    "tarih": "2026-05-02"
+  },
+  {
+    "id": "t509",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3220,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-05-05"
+  },
+  {
+    "id": "t510",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 740,
+    "aciklama": "Elektrik faturası",
+    "tarih": "2026-05-07"
+  },
+  {
+    "id": "t511",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 565,
+    "aciklama": "Su faturası",
+    "tarih": "2026-05-08"
+  },
+  {
+    "id": "t512",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Ulaşım",
+    "tutar": 1120,
+    "aciklama": "Ulaşım kartı yükleme",
+    "tarih": "2026-05-09"
+  },
+  {
+    "id": "t513",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğlence",
+    "tutar": 1100,
+    "aciklama": "Sosyal etkinlik",
+    "tarih": "2026-05-12"
+  },
+  {
+    "id": "t514",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Sağlık",
+    "tutar": 850,
+    "aciklama": "Sağlık harcaması",
+    "tarih": "2026-05-16"
+  },
+  {
+    "id": "t515",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Eğitim",
+    "tutar": 1250,
+    "aciklama": "Online eğitim",
+    "tarih": "2026-05-18"
+  },
+  {
+    "id": "t516",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Giyim",
+    "tutar": 1750,
+    "aciklama": "Giyim alışverişi",
+    "tarih": "2026-05-22"
+  },
+  {
+    "id": "t517",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Fatura",
+    "tutar": 799,
+    "aciklama": "Telefon faturası",
+    "tarih": "2026-05-25"
+  },
+  {
+    "id": "t518",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Diğer",
+    "tutar": 1100,
+    "aciklama": "Diğer harcamalar",
+    "tarih": "2026-05-29"
+  },
+  {
+    "id": "t519",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3020,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-05-14"
+  },
+  {
+    "id": "t520",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Market",
+    "tutar": 3120,
+    "aciklama": "Haftalık market",
+    "tarih": "2026-05-20"
+  },
+  {
+    "id": "t521",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Ek Gelir",
+    "tutar": 6300,
+    "aciklama": "Ek gelir",
+    "tarih": "2026-05-27"
   }
 ]

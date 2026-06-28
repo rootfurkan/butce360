@@ -1,4 +1,16 @@
-import React from "react";
+﻿import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
+//slicedan gelenler
+import {
+  getCategoryReport,
+  getMonthlyReport,
+  getReportMonths,
+  getUserTransactions,
+} from "../features/transactions/transactionSlice";
+//rechart
 import {
   BarChart,
   Bar,
@@ -10,56 +22,154 @@ import {
   Pie,
   Cell,
 } from "recharts";
+//en üstteki tablo ay isimleri
+const monthNames = [
+  "Oca",
+  "Şub",
+  "Mar",
+  "Nis",
+  "May",
+  "Haz",
+  "Tem",
+  "Ağu",
+  "Eyl",
+  "Eki",
+  "Kas",
+  "Ara",
+];
+
+const formatMoney = (amount) => {
+  return `₺${amount.toLocaleString("tr-TR")}`;
+};
+
+const formatMonthName = (dateKey) => {
+  const [year, month] = dateKey.split("-");
+  return `${monthNames[Number(month) - 1]} ${year}`;
+};
+
+const formatShortMonthName = (dateKey) => {
+  const [year, month] = dateKey.split("-");
+  return `${monthNames[Number(month) - 1]} ${year.slice(2, 4)}`;
+};
 
 const Reports = () => {
-  const trendData = [
-    { month: "Eki", gelir: 42000, gider: 33000 },
-    { month: "Kas", gelir: 45000, gider: 36000 },
-    { month: "Ara", gelir: 52000, gider: 46000 },
-    { month: "Oca", gelir: 39000, gider: 31000 },
-    { month: "Şub", gelir: 43000, gider: 35000 },
-    { month: "Mar", gelir: 48000, gider: 38000 },
-    { month: "Nis", gelir: 40000, gider: 49000 },
-    { month: "May", gelir: 47000, gider: 37000 },
-    { month: "Haz", gelir: 52000, gider: 42000 },
-    { month: "Tem", gelir: 49000, gider: 40000 },
-    { month: "Ağu", gelir: 46000, gider: 36000 },
-    { month: "Eyl", gelir: 55000, gider: 43000 },
-  ];
+  const currentUser = useSelector((state) => state.auth.currentUser);
+  const transactions = useSelector((state) => state.transactions.transactions);
 
-  const categoryData = [
-    { name: "Konut", value: 35, color: "#4330ad" },
-    { name: "Market", value: 22, color: "#1d7898" },
-    { name: "Eğlence", value: 15, color: "#5b4cc4" },
-    { name: "Diğer", value: 28, color: "#d7d7e3" },
-  ];
+  const [selectedMonth, setSelectedMonth] = useState("all");
+  const [categoryPage, setCategoryPage] = useState(1);
+  const [performancePage, setPerformancePage] = useState(1);
 
-  const performanceData = [
-    {
-      month: "Eylül",
-      income: "₺52,400.00",
-      expense: "₺42,150.00",
-      difference: "+₺10,250",
-    },
-    {
-      month: "Ağustos",
-      income: "₺48,200.00",
-      expense: "₺39,800.00",
-      difference: "+₺8,400",
-    },
-    {
-      month: "Temmuz",
-      income: "₺49,150.00",
-      expense: "₺41,200.00",
-      difference: "+₺7,950",
-    },
-    {
-      month: "Haziran",
-      income: "₺47,000.00",
-      expense: "₺45,500.00",
-      difference: "+₺1,500",
-    },
-  ];
+  const userId = currentUser?.id;
+  const userTransactions = getUserTransactions(transactions, userId);
+  const reportMonths = getReportMonths(userTransactions);
+  const reportMonthsDesc = [...reportMonths].reverse();
+
+  const monthlyReport = getMonthlyReport(transactions, userId, reportMonths);
+  const performanceReport = [...monthlyReport].reverse();
+
+  const chartData = monthlyReport.map((item) => ({
+    month: formatShortMonthName(item.month),
+    gelir: item.income,
+    gider: item.expense,
+  }));
+
+  const { categoryList, totalExpense } = getCategoryReport(
+    transactions,
+    userId,
+    selectedMonth,
+  );
+
+  const categoryPageCount = Math.ceil(categoryList.length / 5);
+  const visibleCategories = categoryList.slice(
+    (categoryPage - 1) * 5,
+    categoryPage * 5,
+  );
+
+  const performancePageCount = Math.ceil(performanceReport.length / 5);
+  const visiblePerformance = performanceReport.slice(
+    (performancePage - 1) * 5,
+    performancePage * 5,
+  );
+
+  const handleMonthChange = (e) => {
+    setSelectedMonth(e.target.value);
+    setCategoryPage(1);
+  };
+  //excel ve pdf in hangi verilerden oluşacağını seçtik
+  const excelMonthlyData = monthlyReport.map((item) => ({
+    Ay: formatMonthName(item.month),
+    Gelir: item.income,
+    Gider: item.expense,
+    "Net Fark": item.balance,
+  }));
+  //excel dışa aktarma fonksiyonu
+  const exportExcel = () => {
+    const workbook = XLSX.utils.book_new();
+
+    const monthlySheet = XLSX.utils.json_to_sheet(excelMonthlyData);
+    const categorySheet = XLSX.utils.json_to_sheet(excelCategoryData);
+
+    XLSX.utils.book_append_sheet(workbook, monthlySheet, "Aylik Rapor");
+    XLSX.utils.book_append_sheet(workbook, categorySheet, "Kategori Raporu");
+
+    XLSX.writeFile(workbook, "butce360-rapor.xlsx");
+  };
+  //pdf dışa aktarma
+  const exportPdf = async () => {
+    const doc = new jsPDF();
+
+    const font = await fetch("/fonts/Roboto-Medium.ttf");
+    const fontBuffer = await font.arrayBuffer();
+    const fontBytes = new Uint8Array(fontBuffer);
+
+    let fontBinary = "";
+    fontBytes.forEach((byte) => {
+      fontBinary += String.fromCharCode(byte);
+    });
+
+    const fontBase64 = btoa(fontBinary);
+
+    doc.addFileToVFS("Roboto-Medium.ttf", fontBase64);
+    doc.addFont("Roboto-Medium.ttf", "Roboto", "normal");
+    doc.setFont("Roboto");
+
+    doc.text("Bütçe360 Raporu", 14, 15);
+    // türkçe karakter sorunu olduğu için  fontu jspdf e tanıttık
+    autoTable(doc, {
+      startY: 25,
+      styles: {
+        font: "Roboto",
+      },
+      head: [["Ay", "Gelir", "Gider", "Net Fark"]],
+      body: monthlyReport.map((item) => [
+        formatMonthName(item.month),
+        formatMoney(item.income),
+        formatMoney(item.expense),
+        formatMoney(item.balance),
+      ]),
+    });
+
+    autoTable(doc, {
+      startY: doc.lastAutoTable.finalY + 15,
+      styles: {
+        font: "Roboto",
+      },
+      head: [["Kategori", "Tutar", "Yüzde"]],
+      body: categoryList.map((item) => [
+        item.name,
+        formatMoney(item.value),
+        `${Math.round(item.percent)}%`,
+      ]),
+    });
+
+    doc.save("butce360-rapor.pdf");
+  };
+  const excelCategoryData = categoryList.map((item) => ({
+    Kategori: item.name,
+    Tutar: item.value,
+    Yuzde: `${Math.round(item.percent)}%`,
+  }));
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (!active || !payload?.length) return null;
@@ -70,7 +180,7 @@ const Reports = () => {
         {payload.map((item) => (
           <p key={item.dataKey}>
             <span className={`tooltip-dot tooltip-dot-${item.dataKey}`} />
-            {item.name}: ₺{item.value.toLocaleString("tr-TR")}
+            {item.name}: {formatMoney(item.value)}
           </p>
         ))}
       </div>
@@ -102,7 +212,11 @@ const Reports = () => {
         </div>
 
         <div className="reports-export-actions">
-          <button type="button" className="report-primary-button">
+          <button
+            type="button"
+            className="report-primary-button"
+            onClick={exportPdf}
+          >
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M6 3.5H15L19 7.5V20.5H6V3.5Z" />
               <path d="M15 3.5V8H19" />
@@ -112,7 +226,11 @@ const Reports = () => {
             PDF Dışa Aktar
           </button>
 
-          <button type="button" className="report-light-button report-excel-button">
+          <button
+            type="button"
+            className="report-light-button report-excel-button"
+            onClick={exportExcel}
+          >
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M5 4H19V20H5V4Z" />
               <path d="M8 8H16" />
@@ -145,7 +263,7 @@ const Reports = () => {
 
         <div className="reports-bar-chart">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={trendData} barGap={10}>
+            <BarChart data={chartData} barGap={10}>
               <XAxis
                 dataKey="month"
                 axisLine={false}
@@ -153,9 +271,24 @@ const Reports = () => {
                 tick={{ fill: "#5f6675", fontSize: 13, fontWeight: 500 }}
               />
               <YAxis hide />
-              <Tooltip content={<CustomTooltip />} cursor={{ fill: "rgba(83, 74, 183, 0.04)" }} />
-              <Bar dataKey="gelir" name="Gelir" fill="#36b58b" radius={[8, 8, 8, 8]} barSize={11} />
-              <Bar dataKey="gider" name="Gider" fill="#df7656" radius={[8, 8, 8, 8]} barSize={11} />
+              <Tooltip
+                content={<CustomTooltip />}
+                cursor={{ fill: "rgba(83, 74, 183, 0.04)" }}
+              />
+              <Bar
+                dataKey="gelir"
+                name="Gelir"
+                fill="#36b58b"
+                radius={[8, 8, 8, 8]}
+                barSize={11}
+              />
+              <Bar
+                dataKey="gider"
+                name="Gider"
+                fill="#df7656"
+                radius={[8, 8, 8, 8]}
+                barSize={11}
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -164,14 +297,22 @@ const Reports = () => {
       <div className="reports-bottom-grid">
         <section className="reports-category-card">
           <div className="reports-category-top">
-            <h2>Kategori Dağılımı</h2>
+            <div>
+              <h2>Giderler Kategori Dağılımı</h2>
+            </div>
 
-            <button type="button">
-              Eylül 2024
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 10L12 15L17 10" />
-              </svg>
-            </button>
+            <select
+              className="reports-category-month-select"
+              value={selectedMonth}
+              onChange={handleMonthChange}
+            >
+              <option value="all">Tüm Aylar</option>
+              {reportMonthsDesc.map((dateKey) => (
+                <option key={dateKey} value={dateKey}>
+                  {formatMonthName(dateKey)}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="reports-category-content">
@@ -179,14 +320,14 @@ const Reports = () => {
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
-                    data={categoryData}
-                    innerRadius={48}
-                    outerRadius={76}
+                    data={categoryList}
+                    innerRadius={62}
+                    outerRadius={98}
                     paddingAngle={0}
                     dataKey="value"
                     stroke="none"
                   >
-                    {categoryData.map((item) => (
+                    {categoryList.map((item) => (
                       <Cell key={item.name} fill={item.color} />
                     ))}
                   </Pie>
@@ -194,21 +335,36 @@ const Reports = () => {
               </ResponsiveContainer>
 
               <div className="reports-pie-center">
-                <strong>₺42k</strong>
+                <strong>{formatMoney(totalExpense)}</strong>
                 <span>Toplam</span>
               </div>
             </div>
 
             <div className="reports-category-list">
-              {categoryData.map((item) => (
+              {visibleCategories.map((item) => (
                 <div className="reports-category-item" key={item.name}>
                   <div>
                     <span style={{ background: item.color }} />
                     <p>{item.name}</p>
                   </div>
-                  <strong>%{item.value}</strong>
+                  <strong>{Math.round(item.percent)}%</strong>
                 </div>
               ))}
+
+              {categoryPageCount > 1 && (
+                <div className="reports-category-pagination">
+                  {Array.from({ length: categoryPageCount }).map((_, index) => (
+                    <button
+                      key={index + 1}
+                      type="button"
+                      className={`category-page-button ${categoryPage === index + 1 ? "active" : ""}`}
+                      onClick={() => setCategoryPage(index + 1)}
+                    >
+                      {index + 1}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -224,20 +380,36 @@ const Reports = () => {
               <span>Net Fark</span>
             </div>
 
-            {performanceData.map((item) => (
-              <div className="performance-table-row" key={item.month}>
-                <span>{item.month}</span>
-                <strong>{item.income}</strong>
-                <b>{item.expense}</b>
-                <em>{item.difference}</em>
+            {visiblePerformance.map((item) => (
+              <div
+                className={`performance-table-row ${item.balance < 0 ? "performance-table-row-negative" : ""}`}
+                key={item.month}
+              >
+                <span>{formatMonthName(item.month)}</span>
+                <strong>{formatMoney(item.income)}</strong>
+                <b>{formatMoney(item.expense)}</b>
+                <em>
+                  {item.balance >= 0 ? "+" : "-"}
+                  {formatMoney(Math.abs(item.balance))}
+                </em>
               </div>
             ))}
           </div>
 
-          <button type="button" className="performance-view-all">
-            Tümünü Görüntüle
-            <span>→</span>
-          </button>
+          {performancePageCount > 1 && (
+            <div className="reports-category-pagination">
+              {Array.from({ length: performancePageCount }).map((_, index) => (
+                <button
+                  key={index + 1}
+                  type="button"
+                  className={`category-page-button ${performancePage === index + 1 ? "active" : ""}`}
+                  onClick={() => setPerformancePage(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </section>

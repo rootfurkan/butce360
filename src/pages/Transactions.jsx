@@ -10,6 +10,22 @@ import { selectUserPaymentsAsItems } from "../features/payments/paymentSlice";
 
 const ITEMS_PER_PAGE = 10;
 
+const getPaginationItems = (currentPage, totalPages) => {
+  if (totalPages <= 7) {
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
+  }
+
+  if (currentPage <= 4) {
+    return [1, 2, 3, 4, 5, "...", totalPages];
+  }
+
+  if (currentPage >= totalPages - 3) {
+    return [1, "...", totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+  }
+
+  return [1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages];
+};
+
 const formatTL = (v) =>
   `${Math.abs(v).toLocaleString("tr-TR", {
     minimumFractionDigits: 2,
@@ -22,7 +38,7 @@ export default function Transactions() {
 
   const txItems = useSelector((state) =>
     selectFilteredTransactions(state, userId)
-  );
+  ).map((item) => ({ ...item, source: "transaction" }));
   const paymentItems = useSelector((state) =>
     selectUserPaymentsAsItems(state, userId)
   );
@@ -53,6 +69,7 @@ export default function Transactions() {
 
   const totalPages = Math.max(1, Math.ceil(allItems.length / ITEMS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
+  const paginationItems = getPaginationItems(safePage, totalPages);
   const pageItems = allItems.slice(
     (safePage - 1) * ITEMS_PER_PAGE,
     safePage * ITEMS_PER_PAGE
@@ -233,8 +250,12 @@ export default function Transactions() {
               ‹
             </button>
 
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-              (page) => (
+            {paginationItems.map((page, index) =>
+              page === "..." ? (
+                <span className="pagination-dots" key={`dots-${index}`}>
+                  ...
+                </span>
+              ) : (
                 <button
                   type="button"
                   className={`pagination-number ${

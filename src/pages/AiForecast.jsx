@@ -1,69 +1,103 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAiForecast } from "../features/aiForecast/aiForecastSlice";
+import {
+  getCategoryReport,
+  getMonthlyReport,
+  getReportMonths,
+  getUserTransactions,
+} from "../features/transactions/transactionSlice";
+
+const formatMoney = (amount) => {
+  if (amount === undefined || amount === null || amount === "") return "-";
+  return `₺${Number(amount).toLocaleString("tr-TR")}`;
+};
+
+const getCategoryIconType = (type, index) => {
+  if (type) return type;
+
+  const iconTypes = ["kitchen", "transport", "entertainment"];
+  return iconTypes[index % iconTypes.length];
+};
 
 const AiForecast = () => {
+  const dispatch = useDispatch();
+
+  const forecast = useSelector((state) => state.aiForecast.forecast);
+  const loading = useSelector((state) => state.aiForecast.loading);
+  const error = useSelector((state) => state.aiForecast.error);
+  const currentUser = useSelector((state) => state.auth.currentUser);
+  const transactions = useSelector((state) => state.transactions.transactions);
+  const payments = useSelector((state) => state.payments.payments);
+
+  const userId = currentUser?.id;
+  const userTransactions = getUserTransactions(transactions, userId);
+  const reportMonths = getReportMonths(userTransactions);
+  const monthlyReport = getMonthlyReport(transactions, userId, reportMonths);
+
+  const { categoryList } = getCategoryReport(transactions, userId, "all");
+
+  const userPayments = payments.filter(
+    (payment) => payment.userId === userId && payment.aktif,
+  );
+
+  const aiData = {
+    userName: currentUser?.name,
+    monthlyReport,
+    categoryList,
+    fixedPayments: userPayments.map((payment) => ({
+      title: payment.baslik || payment.title,
+      company: payment.firma || payment.company,
+      amount: Number(payment.tutar || payment.amount || 0),
+      paymentDay: new Date(payment.sonOdemeTarihi).getDate(),
+    })),
+  };
+
+  const handleAiForecast = () => {
+    dispatch(getAiForecast(aiData));
+  };
+
   const predictionCards = [
     {
       title: "Sabit Giderler",
-      value: "₺4.500",
+      value: formatMoney(forecast?.fixedExpense),
     },
     {
       title: "Değişken Giderler",
-      value: "₺2.100",
+      value: formatMoney(forecast?.variableExpense),
     },
     {
       title: "Beklenmedik",
-      value: "₺600",
+      value: formatMoney(forecast?.unexpectedExpense),
     },
   ];
 
-  const categoryPredictions = [
-    {
-      title: "Mutfak Harcaması",
-      estimate: "Tahmin: ₺1.800",
-      value: "₺1.240 / ₺1.800",
-      percent: 72,
-      type: "kitchen",
-      status: "normal",
-    },
-    {
-      title: "Ulaşım",
-      estimate: "Tahmin: ₺950",
-      value: "₺980 / ₺950",
-      percent: 100,
-      type: "transport",
-      status: "danger",
-      warning: "Tahmini aşıldı! Beklenmedik bir artış saptandı.",
-    },
-    {
-      title: "Eğlence",
-      estimate: "Tahmin: ₺1.200",
-      value: "₺450 / ₺1.200",
-      percent: 38,
-      type: "entertainment",
-      status: "normal",
-    },
+  const categoryPredictions = forecast?.categoryPredictions?.length
+    ? forecast.categoryPredictions
+    : [
+        { title: "-", estimate: null, currentAmount: null, percent: 0 },
+        { title: "-", estimate: null, currentAmount: null, percent: 0 },
+        { title: "-", estimate: null, currentAmount: null, percent: 0 },
+      ];
+
+  const defaultSuggestions = [
+    { title: "-", text: "-", button: "-", type: "subscription" },
+    { title: "-", text: "-", button: "-", type: "limit" },
+    { title: "-", text: "-", button: "-", type: "saving" },
   ];
 
-  const suggestions = [
-    {
-      title: "Abonelikleri Gözden Geçirin",
-      text: "Son 3 aydır kullanmadığınız “Streaming X” üyeliği ayda ₺129 kayba neden oluyor.",
-      button: "Şimdi Yönet",
-      type: "subscription",
-    },
-    {
-      title: "Haftalık Harcama Limiti",
-      text: "Gelecek hafta dışarıda yemek harcamasını ₺400 ile limitlerseniz hedefinize ulaşırsınız.",
-      button: "Limit Koy",
-      type: "limit",
-    },
-    {
-      title: "Otomatik Birikim",
-      text: "Boşta duran ₺2.500 bakiyenizi “Altın Hesabı”na aktararak enflasyona karşı koruyun.",
-      button: "Aktar",
-      type: "saving",
-    },
-  ];
+  const suggestions = forecast?.suggestions?.length
+    ? [...forecast.suggestions, ...defaultSuggestions].slice(0, 3)
+    : defaultSuggestions;
+
+  const confidenceText = forecast?.confidence
+    ? `%${forecast.confidence} Güven Aralığı`
+    : "-";
+
+  const changeText =
+    forecast?.changeRate !== undefined && forecast?.changeRate !== null
+      ? `${forecast.changeRate > 0 ? "+" : ""}%${forecast.changeRate}`
+      : "-";
 
   return (
     <section className="ai-forecast-page">
@@ -78,17 +112,35 @@ const AiForecast = () => {
               </svg>
               Gelecek Ay Tahmini
             </h1>
-            <p>Harcama alışkanlıklarınıza dayanarak Ocak 2025 projeksiyonu.</p>
+            <p>
+              {forecast?.projectionText ||
+                "Analiz başlatıldığında harcama alışkanlıklarınıza göre projeksiyon hazırlanır."}
+            </p>
           </div>
 
-          <div className="ai-confidence">
-            <span>%94 Güven Aralığı</span>
-            <p>Geçen aya göre <strong>-%4.2</strong> daha düşük</p>
+          <div className="ai-header-actions">
+            <button
+              type="button"
+              className="ai-analyze-button"
+              onClick={handleAiForecast}
+              disabled={loading}
+            >
+              {loading ? "Analiz ediliyor..." : "Analiz Et"}
+            </button>
+
+            <div className="ai-confidence">
+              <span>{confidenceText}</span>
+              <p>
+                Geçen aya göre <strong>{changeText}</strong>
+              </p>
+            </div>
           </div>
         </div>
 
+        {error && <p className="profile-field-error">{error}</p>}
+
         <div className="ai-main-estimate">
-          <strong>₺7.200</strong>
+          <strong>{formatMoney(forecast?.nextMonthExpense)}</strong>
           <span>Tahmini Harcama</span>
         </div>
 
@@ -106,60 +158,67 @@ const AiForecast = () => {
         <section className="category-prediction-card">
           <div className="ai-section-header">
             <h2>Kategori Bazlı Tahminler</h2>
-            <button type="button">Detayları Gör</button>
           </div>
 
           <div className="category-prediction-list">
-            {categoryPredictions.map((item) => (
-              <article className="category-prediction-item" key={item.title}>
-                <div className={`category-prediction-icon ${item.type}`}>
-                  {item.type === "kitchen" && (
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M6 6H7.5L9 15H17.5L19 8H8" />
-                      <path d="M10 19.5H10.01" />
-                      <path d="M17 19.5H17.01" />
-                    </svg>
-                  )}
+            {categoryPredictions.map((item, index) => {
+              const iconType = getCategoryIconType(item.type, index);
+              const percent = item.percent || 0;
+              const status = item.status || "normal";
 
-                  {item.type === "transport" && (
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M6 11L8 6H16L18 11" />
-                      <path d="M5 11H19V17H5V11Z" />
-                      <path d="M8 17V19" />
-                      <path d="M16 17V19" />
-                      <path d="M8 14H8.01" />
-                      <path d="M16 14H16.01" />
-                    </svg>
-                  )}
+              return (
+                <article className="category-prediction-item" key={`${item.title}-${index}`}>
+                  <div className={`category-prediction-icon ${iconType}`}>
+                    {iconType === "kitchen" && (
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 6H7.5L9 15H17.5L19 8H8" />
+                        <path d="M10 19.5H10.01" />
+                        <path d="M17 19.5H17.01" />
+                      </svg>
+                    )}
 
-                  {item.type === "entertainment" && (
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M6 8H18V18H6V8Z" />
-                      <path d="M9 5V10" />
-                      <path d="M15 5V10" />
-                      <path d="M9 13H15" />
-                    </svg>
-                  )}
-                </div>
+                    {iconType === "transport" && (
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 11L8 6H16L18 11" />
+                        <path d="M5 11H19V17H5V11Z" />
+                        <path d="M8 17V19" />
+                        <path d="M16 17V19" />
+                        <path d="M8 14H8.01" />
+                        <path d="M16 14H16.01" />
+                      </svg>
+                    )}
 
-                <div className="category-prediction-content">
-                  <div className="category-prediction-top">
-                    <div>
-                      <h3>{item.title}</h3>
-                      <p>{item.estimate}</p>
+                    {iconType === "entertainment" && (
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 8H18V18H6V8Z" />
+                        <path d="M9 5V10" />
+                        <path d="M15 5V10" />
+                        <path d="M9 13H15" />
+                      </svg>
+                    )}
+                  </div>
+
+                  <div className="category-prediction-content">
+                    <div className="category-prediction-top">
+                      <div>
+                        <h3>{item.title || "-"}</h3>
+                        <p>Tahmin: {formatMoney(item.estimate)}</p>
+                      </div>
+
+                      <strong className={status}>
+                        {formatMoney(item.currentAmount)} / {formatMoney(item.estimate)}
+                      </strong>
                     </div>
 
-                    <strong className={item.status}>{item.value}</strong>
-                  </div>
+                    <div className={`category-progress category-progress-${status}`}>
+                      <span style={{ width: `${Math.min(100, percent)}%` }} />
+                    </div>
 
-                  <div className={`category-progress category-progress-${item.status}`}>
-                    <span style={{ width: `${item.percent}%` }} />
+                    {item.warning && <em>{item.warning}</em>}
                   </div>
-
-                  {item.warning && <em>{item.warning}</em>}
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </section>
 
@@ -173,15 +232,22 @@ const AiForecast = () => {
 
           <h2>Trend Analizi</h2>
 
-          <p>
-            Harcama hızınız geçen haftaya göre <strong>yavaşladı.</strong>
-          </p>
+          <p>{forecast?.trendText || "-"}</p>
 
           <div className="trend-saving-box">
-            Ay sonunda <strong>₺400 tasarruf</strong> potansiyeli görünüyor.
+            {forecast ? (
+              <>
+                Ay sonunda <strong>{formatMoney(forecast.savingAmount)} tasarruf</strong>{" "}
+                potansiyeli görünüyor.
+              </>
+            ) : (
+              "-"
+            )}
           </div>
 
-          <button type="button">Detaylı Analiz Al</button>
+          <button type="button" onClick={handleAiForecast} disabled={loading}>
+            {loading ? "Analiz ediliyor..." : "Detaylı Analiz Al"}
+          </button>
         </aside>
       </div>
 
@@ -196,8 +262,8 @@ const AiForecast = () => {
         </div>
 
         <div className="ai-suggestions-grid">
-          {suggestions.map((item) => (
-            <article className="ai-suggestion-card" key={item.title}>
+          {suggestions.map((item, index) => (
+            <article className="ai-suggestion-card" key={`${item.title}-${index}`}>
               <div className={`ai-suggestion-icon ${item.type}`}>
                 {item.type === "subscription" && (
                   <svg viewBox="0 0 24 24" fill="none">
@@ -225,11 +291,11 @@ const AiForecast = () => {
                 )}
               </div>
 
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+              <h3>{item.title || "-"}</h3>
+              <p>{item.text || "-"}</p>
 
               <button type="button">
-                {item.button}
+                {item.button || "-"}
                 <span>→</span>
               </button>
             </article>

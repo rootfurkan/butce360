@@ -606,6 +606,12 @@
     @apply flex items-center gap-4;
   }
 
+  .header-welcome-text {
+    @apply m-0 rounded-full bg-white/60 px-4 py-2 text-[14px] font-semibold;
+    color: #534ab7;
+    border: 1px solid rgba(83, 74, 183, 0.12);
+  }
+
   .header-icon-button {
     @apply flex h-[36px] w-[36px] items-center justify-center rounded-full transition-all duration-200;
     color: #6f7788;
@@ -1939,11 +1945,11 @@
   }
 
   .reports-pie-wrapper {
-    @apply relative h-[190px] w-[190px];
+    @apply relative h-[250px] w-[250px];
   }
 
   .reports-pie-center {
-    @apply absolute left-1/2 top-1/2 flex h-[92px] w-[92px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full text-center;
+    @apply absolute left-1/2 top-1/2 flex h-[118px] w-[118px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full text-center;
     background: rgba(248, 250, 255, 0.82);
   }
 
@@ -1959,6 +1965,18 @@
 
   .reports-category-list {
     @apply flex min-w-[160px] flex-col gap-5;
+  }
+
+  .reports-category-pagination {
+    @apply mt-6 flex justify-end flex-wrap items-center gap-2;
+  }
+
+  .category-page-button {
+    @apply h-[34px] min-w-[34px] rounded-full border border-[#e3e6ee] bg-white px-3 text-[13px] font-semibold text-[#5f6675];
+  }
+
+  .category-page-button.active {
+    @apply bg-[#534ab7] text-white border-transparent;
   }
 
   .reports-category-item {
@@ -1999,7 +2017,11 @@
   }
 
   .performance-table-row {
-    @apply min-h-[58px] text-[15px];
+    @apply min-h-[58px] rounded-2xl px-3 text-[15px];
+  }
+
+  .performance-table-row-negative {
+    background: #fff0f0;
   }
 
   .performance-table-row span {
@@ -2021,6 +2043,11 @@
     @apply inline-flex h-[28px] items-center justify-center rounded-full px-3 text-[12px] font-semibold not-italic;
     color: #2389ad;
     background: #dff3fb;
+  }
+
+  .performance-table-row-negative em {
+    color: #d94b55;
+    background: #ffe0e3;
   }
 
   .performance-view-all {
@@ -2150,6 +2177,19 @@
 
   .ai-confidence {
     @apply text-right;
+  }
+
+  .ai-header-actions {
+    @apply flex items-start gap-4;
+  }
+
+  .ai-analyze-button {
+    @apply h-[38px] rounded-[11px] px-5 text-[13px] font-semibold text-white;
+    background: #534ab7;
+  }
+
+  .ai-analyze-button:disabled {
+    @apply cursor-not-allowed opacity-70;
   }
 
   .ai-confidence span {
@@ -3501,4 +3541,8 @@
 }
 .login-error{
   @apply text-red-500 text-xs font-semibold mb-4
+}
+
+.reports-category-month-select{
+  @apply border border-indigo-200 rounded-lg px-3 py-1
 }
