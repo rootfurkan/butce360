@@ -99,7 +99,7 @@ const Sidebar = () => {
       <div className="sidebar-content">
         <div className="sidebar-brand">
           <h2>Bütçe360</h2>
-          <p>Premium Finance</p>
+          <p>Hesabınızı Yönetin</p>
         </div>
 
         <nav className="sidebar-menu" aria-label="Ana menü">

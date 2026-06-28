@@ -5,69 +5,86 @@ import { addUser, clearError, deleteUser, updateUser } from "../features/auth/au
 
 export default function Profile() {
   const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.auth.currentUser);
+  const userList = useSelector((state) => state.auth.users);
 
-  const userList = useSelector((state) => state.auth.users); // Kullanıcı listesi store'dan alınır.
-  const currentUser = useSelector((state) => state.auth.currentUser); // Giriş yapan kullanıcı alınır.
+  const isAdmin = currentUser?.role === "admin";
+  const visibleUserList = isAdmin
+    ? userList
+    : userList.filter((user) => user.id === currentUser?.id);
 
-  const [selectedUser, setSelectedUser] = useState(null); // Düzenlenecek kullanıcı tutulur.
-  const [userToDelete, setUserToDelete] = useState(null); // Silinecek kullanıcı tutulur.
-
-  const [name, setName] = useState(""); // Ad bilgisi tutulur.
-  const [surname, setSurname] = useState(""); // Soyad bilgisi tutulur.
-  const [email, setEmail] = useState(""); // E-posta bilgisi tutulur.
-  const [role, setRole] = useState("user"); // Rol bilgisi tutulur.
-  const [currency, setCurrency] = useState("TRY"); // Para birimi bilgisi tutulur.
-  const [password, setPassword] = useState(""); // Şifre bilgisi tutulur.
-  const [passwordRepeat, setPasswordRepeat] = useState(""); // Şifre tekrar bilgisi tutulur.
-
-  const [formErrors, setFormErrors] = useState({}); // Form hata mesajları tutulur.
-  const [successMessage, setSuccessMessage] = useState(""); // Toast mesajı tutulur.
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [userToDelete, setUserToDelete] = useState(null);
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("user");
+  const [currency, setCurrency] = useState("TRY");
+  const [password, setPassword] = useState("");
+  const [passwordRepeat, setPasswordRepeat] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
     if (!successMessage) return;
 
     const timer = setTimeout(() => {
-      setSuccessMessage(""); // Toast mesajı kısa süre sonra kapanır.
+      setSuccessMessage("");
     }, 2500);
 
     return () => clearTimeout(timer);
   }, [successMessage]);
 
+  // user rolündeki kullanıcı kendi bilgileriyle forma yerleştirilir
+  useEffect(() => {
+    if (isAdmin || !currentUser) return;
+
+    setSelectedUser(currentUser);
+    setName(currentUser.ad || "");
+    setSurname(currentUser.soyad || "");
+    setEmail(currentUser.email || "");
+    setRole(currentUser.role || "user");
+    setCurrency(currentUser.paraBirimi || "TRY");
+  }, [currentUser, isAdmin]);
+
+  // form alanları temizlenir ve düzenleme modu kapatılır
   const resetForm = () => {
-    setSelectedUser(null); // Düzenleme modu kapatılır.
-    setName(""); // Ad inputu temizlenir.
-    setSurname(""); // Soyad inputu temizlenir.
-    setEmail(""); // E-posta inputu temizlenir.
-    setRole("user"); // Rol varsayılana döner.
-    setCurrency("TRY"); // Para birimi varsayılana döner.
-    setPassword(""); // Şifre inputu temizlenir.
-    setPasswordRepeat(""); // Şifre tekrar inputu temizlenir.
-    setFormErrors({}); // Hata mesajları temizlenir.
-    dispatch(clearError()); // Store hata mesajı temizlenir.
+    setSelectedUser(null);
+    setName("");
+    setSurname("");
+    setEmail("");
+    setRole("user");
+    setCurrency("TRY");
+    setPassword("");
+    setPasswordRepeat("");
+    setFormErrors({});
+    dispatch(clearError());
   };
 
+  // seçilen kullanıcının bilgileri forma yazılır
   const handleEditClick = (user) => {
-    setSelectedUser(user); // Kullanıcı düzenleme için seçilir.
-    setName(user.ad || ""); // Kullanıcının adı inputa yazılır.
-    setSurname(user.soyad || ""); // Kullanıcının soyadı inputa yazılır.
-    setEmail(user.email || ""); // Kullanıcının e-postası inputa yazılır.
-    setRole(user.role || "user"); // Kullanıcının rolü inputa yazılır.
-    setCurrency(user.paraBirimi || "TRY"); // Kullanıcının para birimi inputa yazılır.
-    setPassword(""); // Şifre alanı boş bırakılır.
-    setPasswordRepeat(""); // Şifre tekrar alanı boş bırakılır.
-    setFormErrors({}); // Eski hatalar temizlenir.
+    setSelectedUser(user);
+    setName(user.ad || "");
+    setSurname(user.soyad || "");
+    setEmail(user.email || "");
+    setRole(user.role || "user");
+    setCurrency(user.paraBirimi || "TRY");
+    setPassword("");
+    setPasswordRepeat("");
+    setFormErrors({});
   };
 
+  // form kaydedilmeden önce alanlar kontrol edilir
   const validateForm = () => {
-    const errors = {}; // Hatalar bu objede toplanır.
+    const errors = {};
 
     if (!name.trim()) errors.name = "Ad alanı boş bırakılamaz.";
     if (!surname.trim()) errors.surname = "Soyad alanı boş bırakılamaz.";
     if (!email.trim()) errors.email = "E-posta alanı boş bırakılamaz.";
 
     const emailExists = userList.some(
-      (user) => user.email === email && user.id !== selectedUser?.id
-    ); // Aynı e-posta başka kullanıcıda var mı bakılır.
+      (user) => user.email === email && user.id !== selectedUser?.id,
+    );
 
     if (emailExists) errors.email = "Bu e-posta başka kullanıcıda kayıtlı.";
 
@@ -75,13 +92,13 @@ export default function Profile() {
       errors.passwordRepeat = "Şifreler eşleşmiyor.";
     }
 
-    setFormErrors(errors); // Hatalar ekrana basılır.
-
+    setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
+  // kullanıcı ekleme ve güncelleme işlemi yapılır
   const handleSubmit = (e) => {
-    e.preventDefault(); // Sayfanın yenilenmesi engellenir.
+    e.preventDefault();
 
     if (!validateForm()) return;
 
@@ -89,31 +106,33 @@ export default function Profile() {
       ad: name,
       soyad: surname,
       email,
-      role,
+      role: isAdmin ? role : currentUser?.role || "user",
       paraBirimi: currency,
-    }; // Kaydedilecek kullanıcı bilgisi hazırlanır.
+    };
 
     if (password.trim()) {
-      userData.password = password; // Şifre girildiyse kayda eklenir.
+      userData.password = password;
     }
 
     if (selectedUser) {
-      dispatch(updateUser({ id: selectedUser.id, updatedUser: userData })); // Kullanıcı güncellenir.
+      dispatch(updateUser({ id: selectedUser.id, updatedUser: userData }));
       setSuccessMessage("Kullanıcı bilgileri güncellendi.");
     } else {
-      dispatch(addUser({ ...userData, password: password || "123456" })); // Yeni kullanıcı eklenir.
+      dispatch(addUser({ ...userData, password: password || "123456" }));
       setSuccessMessage("Yeni kullanıcı eklendi.");
     }
 
     resetForm();
   };
 
+  // modal onayından sonra kullanıcı silinir
   const handleConfirmDelete = () => {
-    dispatch(deleteUser(userToDelete.id)); // Kullanıcı silinir.
-    setUserToDelete(null); // Silme onayı kapatılır.
+    dispatch(deleteUser(userToDelete.id));
+    setUserToDelete(null);
     setSuccessMessage("Kullanıcı silindi.");
   };
 
+  // kullanıcı tablosunda gösterilecek kolonlar hazırlanır
   const columns = [
     {
       name: "ID",
@@ -166,20 +185,23 @@ export default function Profile() {
             </svg>
           </button>
 
-          <button type="button" onClick={() => setUserToDelete(row)}>
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M5 7H19" />
-              <path d="M9 7V5H15V7" />
-              <path d="M8 7L8.7 20H15.3L16 7" />
-              <path d="M10.5 11V17" />
-              <path d="M13.5 11V17" />
-            </svg>
-          </button>
+          {row.id !== currentUser?.id && (
+            <button type="button" onClick={() => setUserToDelete(row)}>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 7H19" />
+                <path d="M9 7V5H15V7" />
+                <path d="M8 7L8.7 20H15.3L16 7" />
+                <path d="M10.5 11V17" />
+                <path d="M13.5 11V17" />
+              </svg>
+            </button>
+          )}
         </div>
       ),
     },
-  ]; // DataTable kolonları tanımlanır.
+  ];
 
+  // datatable görünümü için özel stiller verilir
   const tableStyles = {
     tableWrapper: {
       style: {
@@ -219,7 +241,7 @@ export default function Profile() {
         borderTopColor: "rgba(148, 163, 184, 0.16)",
       },
     },
-  }; // DataTable'ın kendi iç kenarları burada yuvarlatılır.
+  };
 
   return (
     <section className="profile-page">
@@ -227,16 +249,26 @@ export default function Profile() {
 
       <div className="profile-page-header">
         <h1>Profil Ayarları</h1>
-        <p>Kullanıcı ekleme, düzenleme ve silme işlemlerini buradan yapabilirsiniz.</p>
+        <p>
+          {isAdmin
+            ? "Kullanıcı ekleme, düzenleme ve silme işlemlerini buradan yapabilirsiniz."
+            : "Profil bilgilerinizi buradan güncelleyebilirsiniz."}
+        </p>
       </div>
 
       <section className="profile-card">
         <div className="profile-card-title-row">
           <div className="profile-card-title">
-            <h2>{selectedUser ? "Kullanıcı Düzenle" : "Yeni Kullanıcı Ekle"}</h2>
+            <h2>
+              {isAdmin
+                ? selectedUser
+                  ? "Kullanıcı Düzenle"
+                  : "Yeni Kullanıcı Ekle"
+                : "Profilimi Düzenle"}
+            </h2>
           </div>
 
-          {selectedUser && (
+          {isAdmin && selectedUser && (
             <button type="button" className="new-user-button" onClick={resetForm}>
               Vazgeç
             </button>
@@ -264,7 +296,7 @@ export default function Profile() {
 
           <div className="profile-field">
             <label>Rol</label>
-            <select value={role} onChange={(e) => setRole(e.target.value)}>
+            <select value={role} onChange={(e) => setRole(e.target.value)} disabled={!isAdmin}>
               <option value="admin">Admin</option>
               <option value="user">Kullanıcı</option>
             </select>
@@ -303,7 +335,11 @@ export default function Profile() {
 
           <div className="profile-save-area">
             <button type="submit" className="profile-save-button">
-              {selectedUser ? "Değişiklikleri Kaydet" : "Kullanıcı Ekle"}
+              {isAdmin
+                ? selectedUser
+                  ? "Değişiklikleri Kaydet"
+                  : "Kullanıcı Ekle"
+                : "Profilimi Güncelle"}
             </button>
           </div>
         </form>
@@ -323,7 +359,7 @@ export default function Profile() {
         <DataTable
           className="profile-data-table"
           columns={columns}
-          data={userList}
+          data={visibleUserList}
           pagination
           paginationPerPage={10}
           paginationRowsPerPageOptions={[10]}

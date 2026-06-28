@@ -13,6 +13,7 @@ const formatMoney = (amount) => {
   return `₺${Number(amount).toLocaleString("tr-TR")}`;
 };
 
+// kategori tahmini için uygun ikon tipi seçilir
 const getCategoryIconType = (type, index) => {
   if (type) return type;
 
@@ -30,17 +31,17 @@ const AiForecast = () => {
   const transactions = useSelector((state) => state.transactions.transactions);
   const payments = useSelector((state) => state.payments.payments);
 
+  // ai analizi için kullanıcının finans özeti hazırlanır
   const userId = currentUser?.id;
   const userTransactions = getUserTransactions(transactions, userId);
   const reportMonths = getReportMonths(userTransactions);
   const monthlyReport = getMonthlyReport(transactions, userId, reportMonths);
-
   const { categoryList } = getCategoryReport(transactions, userId, "all");
-
   const userPayments = payments.filter(
     (payment) => payment.userId === userId && payment.aktif,
   );
 
+  // thunk içine gönderilecek veri tek objede toplanır
   const aiData = {
     userName: currentUser?.name,
     monthlyReport,
@@ -57,6 +58,7 @@ const AiForecast = () => {
     dispatch(getAiForecast(aiData));
   };
 
+  // üstteki küçük tahmin kartları hazırlanır
   const predictionCards = [
     {
       title: "Sabit Giderler",
@@ -72,6 +74,7 @@ const AiForecast = () => {
     },
   ];
 
+  // analiz yapılmadığında kategori alanları boş gösterilir
   const categoryPredictions = forecast?.categoryPredictions?.length
     ? forecast.categoryPredictions
     : [
@@ -80,6 +83,7 @@ const AiForecast = () => {
         { title: "-", estimate: null, currentAmount: null, percent: 0 },
       ];
 
+  // ai öneri dönmezse öneri kartları boş değerle gösterilir
   const defaultSuggestions = [
     { title: "-", text: "-", button: "-", type: "subscription" },
     { title: "-", text: "-", button: "-", type: "limit" },

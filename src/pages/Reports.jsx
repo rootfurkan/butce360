@@ -3,14 +3,12 @@ import { useSelector } from "react-redux";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import * as XLSX from "xlsx";
-//slicedan gelenler
 import {
   getCategoryReport,
   getMonthlyReport,
   getReportMonths,
   getUserTransactions,
 } from "../features/transactions/transactionSlice";
-//rechart
 import {
   BarChart,
   Bar,
@@ -22,7 +20,8 @@ import {
   Pie,
   Cell,
 } from "recharts";
-//en üstteki tablo ay isimleri
+
+// ay isimleri grafik ve tablo için kullanılır
 const monthNames = [
   "Oca",
   "Şub",
@@ -60,11 +59,13 @@ const Reports = () => {
   const [categoryPage, setCategoryPage] = useState(1);
   const [performancePage, setPerformancePage] = useState(1);
 
+  // giriş yapan kullanıcının rapora girecek işlemleri hazırlanır
   const userId = currentUser?.id;
   const userTransactions = getUserTransactions(transactions, userId);
   const reportMonths = getReportMonths(userTransactions);
   const reportMonthsDesc = [...reportMonths].reverse();
 
+  // aylık rapor verisi grafik ve tablo için hazırlanır
   const monthlyReport = getMonthlyReport(transactions, userId, reportMonths);
   const performanceReport = [...monthlyReport].reverse();
 
@@ -74,18 +75,21 @@ const Reports = () => {
     gider: item.expense,
   }));
 
+  // seçilen aya göre kategori dağılımı alınır
   const { categoryList, totalExpense } = getCategoryReport(
     transactions,
     userId,
     selectedMonth,
   );
 
+  // kategori listesi sayfalama için bölünür
   const categoryPageCount = Math.ceil(categoryList.length / 5);
   const visibleCategories = categoryList.slice(
     (categoryPage - 1) * 5,
     categoryPage * 5,
   );
 
+  // performans listesi sayfalama için bölünür
   const performancePageCount = Math.ceil(performanceReport.length / 5);
   const visiblePerformance = performanceReport.slice(
     (performancePage - 1) * 5,
@@ -96,14 +100,16 @@ const Reports = () => {
     setSelectedMonth(e.target.value);
     setCategoryPage(1);
   };
-  //excel ve pdf in hangi verilerden oluşacağını seçtik
+
+  // excel çıktısı için aylık rapor verisi hazırlanır
   const excelMonthlyData = monthlyReport.map((item) => ({
     Ay: formatMonthName(item.month),
     Gelir: item.income,
     Gider: item.expense,
     "Net Fark": item.balance,
   }));
-  //excel dışa aktarma fonksiyonu
+
+  // excel dosyası iki ayrı sayfa olarak oluşturulur
   const exportExcel = () => {
     const workbook = XLSX.utils.book_new();
 
@@ -115,7 +121,8 @@ const Reports = () => {
 
     XLSX.writeFile(workbook, "butce360-rapor.xlsx");
   };
-  //pdf dışa aktarma
+
+  // pdf çıktısı için türkçe destekli font tanıtılır
   const exportPdf = async () => {
     const doc = new jsPDF();
 
@@ -135,7 +142,6 @@ const Reports = () => {
     doc.setFont("Roboto");
 
     doc.text("Bütçe360 Raporu", 14, 15);
-    // türkçe karakter sorunu olduğu için  fontu jspdf e tanıttık
     autoTable(doc, {
       startY: 25,
       styles: {
@@ -165,12 +171,15 @@ const Reports = () => {
 
     doc.save("butce360-rapor.pdf");
   };
+
+  // excel çıktısı için kategori rapor verisi hazırlanır
   const excelCategoryData = categoryList.map((item) => ({
     Kategori: item.name,
     Tutar: item.value,
     Yuzde: `${Math.round(item.percent)}%`,
   }));
 
+  // grafik üzerine gelince gösterilecek tooltip hazırlanır
   const CustomTooltip = ({ active, payload, label }) => {
     if (!active || !payload?.length) return null;
 
@@ -190,27 +199,6 @@ const Reports = () => {
   return (
     <section className="reports-page">
       <div className="reports-actions-row">
-        <div className="reports-filter-actions">
-          <button type="button" className="report-light-button">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M7 3V6" />
-              <path d="M17 3V6" />
-              <path d="M4.5 9H19.5" />
-              <path d="M5.5 5.5H18.5C19.05 5.5 19.5 5.95 19.5 6.5V18.5C19.5 19.05 19.05 19.5 18.5 19.5H5.5C4.95 19.5 4.5 19.05 4.5 18.5V6.5C4.5 5.95 4.95 5.5 5.5 5.5Z" />
-            </svg>
-            Son 12 Ay
-          </button>
-
-          <button type="button" className="report-light-button">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 6H20" />
-              <path d="M7 12H17" />
-              <path d="M10 18H14" />
-            </svg>
-            Filtrele
-          </button>
-        </div>
-
         <div className="reports-export-actions">
           <button
             type="button"

@@ -1,22 +1,22 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const getJsonFromText = (text) => {
-  const cleanText = text.replace(/```json|```/g, '').trim()
-  const firstBrace = cleanText.indexOf('{')
-  const lastBrace = cleanText.lastIndexOf('}')
+  const cleanText = text.replace(/```json|```/g, '').trim() //gereksiz alanları temizliyor trim ile baştaki ve sondaki boşlukları temizler
+  const firstBrace = cleanText.indexOf('{') // ana json cevabı için ilk süslü parantez işaretini buluyor
+  const lastBrace = cleanText.lastIndexOf('}') // sonuncusunu buluyor
 
-  if (firstBrace === -1 || lastBrace === -1) {
+  if (firstBrace === -1 || lastBrace === -1) { //json bulamadıysa hata verir
     throw new Error('AI cevabı JSON formatında değil.')
   }
 
-  return cleanText.slice(firstBrace, lastBrace + 1)
+  return cleanText.slice(firstBrace, lastBrace + 1) //json kısmını kesip geri döndürür
 }
 
 export const getAiForecast = createAsyncThunk(
   'aiForecast/getAiForecast',
   async (aiData, thunkAPI) => {
     try {
-      const token = import.meta.env.VITE_HF_TOKEN
+      const token = import.meta.env.VITE_HF_TOKEN //.env den tokeni okuduk
 
       if (!token) {
         return thunkAPI.rejectWithValue('Hugging Face token bulunamadı. .env dosyasını kontrol edin.')
@@ -37,6 +37,7 @@ export const getAiForecast = createAsyncThunk(
             },
             {
               role: 'user',
+              //prompt
               content: `
 Aşağıdaki finans verilerini analiz et.
 
@@ -95,26 +96,26 @@ ${JSON.stringify(aiData)}
           response_format: {
             type: 'json_object',
           },
-          reasoning_effort: 'low',
+          reasoning_effort: 'low', //yanıt hızı
           temperature: 0.2,
           max_tokens: 1600,
         }),
       })
 
-      const data = await response.json()
+      const data = await response.json() //ai cevabını jsona çevirdik
 
       if (!response.ok) {
-        const apiMessage = data?.error?.message || data?.error || data?.message
+        const apiMessage = data?.error?.message || data?.error || data?.message //apiden hata mesajı yakalaöaya çalışır her apide farklı json dönebilir error ismi o yüzden bir kaç tane denedik
         return thunkAPI.rejectWithValue(apiMessage || 'AI tahmini alınamadı.')
       }
 
-      const message = data.choices?.[0]?.message
+      const message = data.choices?.[0]?.message //ilk choice içindeki mesaj alınır json yanıtında
       const text =
         message?.content ||
-        message?.reasoning_content ||
+        message?.reasoning_content || //cevap formatı için 3 farklı ihtimal denedik
         message?.tool_calls?.[0]?.function?.arguments
 
-      if (!text) {
+      if (!text) { //hiç text bulamazsa burası tetiklenir ve neden başarısız olduğu bilgisi alınıp hata verir
         console.log('Hugging Face cevabı:', data)
         const finishReason = data.choices?.[0]?.finish_reason
         return thunkAPI.rejectWithValue(
@@ -134,11 +135,11 @@ ${JSON.stringify(aiData)}
 )
 
 const initialState = {
-  forecast: null,
-  loading: false,
+  forecast: null, //ai den gelen tahmin sonucu
+  loading: false, //istek devam ediyor mu
   error: '',
 }
-
+// slice oluşturduk
 const aiForecastSlice = createSlice({
   name: 'aiForecast',
   initialState,

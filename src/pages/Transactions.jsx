@@ -26,6 +26,16 @@ const getPaginationItems = (currentPage, totalPages) => {
   return [1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages];
 };
 
+const formatDateText = (date) => {
+  if (!date) return "";
+
+  return new Date(date).toLocaleDateString("tr-TR", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+};
+
 const formatTL = (v) =>
   `${Math.abs(v).toLocaleString("tr-TR", {
     minimumFractionDigits: 2,
@@ -66,6 +76,8 @@ export default function Transactions() {
   }, [txItems, paymentItems, filter.kategori, filter.tur, filter.baslangic, filter.bitis]);
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [showDateModal, setShowDateModal] = useState(false);
+  const [transactionToDelete, setTransactionToDelete] = useState(null);
 
   const totalPages = Math.max(1, Math.ceil(allItems.length / ITEMS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
@@ -80,22 +92,63 @@ export default function Transactions() {
     setCurrentPage(1);
   };
 
+  const handleConfirmDelete = () => {
+    dispatch(deleteTransaction(transactionToDelete.id));
+    setTransactionToDelete(null);
+  };
+
+  const dateRangeText =
+    filter.baslangic && filter.bitis
+      ? `${formatDateText(filter.baslangic)} - ${formatDateText(filter.bitis)}`
+      : "Tarih seçin";
+
   return (
     <section className="transactions-page">
       <div className="transactions-filter-card">
-        <div className="filter-group">
-          <span>Tarih Aralığı:</span>
-          <input
-            type="date"
-            value={filter.baslangic}
-            onChange={(e) => handleFilterChange("baslangic", e.target.value)}
-          />
-          <span>-</span>
-          <input
-            type="date"
-            value={filter.bitis}
-            onChange={(e) => handleFilterChange("bitis", e.target.value)}
-          />
+        <div className="filter-group filter-date-range">
+          <span className="filter-label">Tarih Aralığı:</span>
+
+          <div className="date-range-wrapper">
+            <button
+              type="button"
+              className="date-range-button"
+              onClick={() => setShowDateModal(!showDateModal)}
+            >
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 3V6" />
+                <path d="M17 3V6" />
+                <path d="M4.5 9H19.5" />
+                <path d="M5.5 5.5H18.5C19.05 5.5 19.5 5.95 19.5 6.5V18.5C19.5 19.05 19.05 19.5 18.5 19.5H5.5C4.95 19.5 4.5 19.05 4.5 18.5V6.5C4.5 5.95 4.95 5.5 5.5 5.5Z" />
+              </svg>
+              <strong>{dateRangeText}</strong>
+            </button>
+
+            {showDateModal && (
+              <div className="date-range-modal">
+                <label>
+                  <span>Başlangıç Tarihi</span>
+                  <input
+                    type="date"
+                    value={filter.baslangic}
+                    onChange={(e) => handleFilterChange("baslangic", e.target.value)}
+                  />
+                </label>
+
+                <label>
+                  <span>Bitiş Tarihi</span>
+                  <input
+                    type="date"
+                    value={filter.bitis}
+                    onChange={(e) => handleFilterChange("bitis", e.target.value)}
+                  />
+                </label>
+
+                <button type="button" onClick={() => setShowDateModal(false)}>
+                  Uygula
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="filter-group">
@@ -133,6 +186,7 @@ export default function Transactions() {
           onClick={() => {
             dispatch(resetFilter());
             setCurrentPage(1);
+            setShowDateModal(false);
           }}
         >
           Sıfırla
@@ -146,7 +200,7 @@ export default function Transactions() {
           <span>Kategori</span>
           <span>Tür</span>
           <span>Tutar</span>
-          <span></span>
+          <span>İşlem</span>
         </div>
 
         <div className="transactions-list-body">
@@ -205,9 +259,16 @@ export default function Transactions() {
                   <button
                     type="button"
                     className="btn-table-action-danger"
-                    onClick={() => dispatch(deleteTransaction(item.id))}
+                    aria-label="İşlemi sil"
+                    onClick={() => setTransactionToDelete(item)}
                   >
-                    Sil
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M6 7H18" />
+                      <path d="M9 7V5H15V7" />
+                      <path d="M9 10V18" />
+                      <path d="M15 10V18" />
+                      <path d="M8 7L8.6 20H15.4L16 7" />
+                    </svg>
                   </button>
                 )}
               </div>
@@ -282,6 +343,32 @@ export default function Transactions() {
           </div>
         </div>
       </div>
+
+      {transactionToDelete && (
+        <div className="profile-modal-backdrop">
+          <div className="profile-delete-modal">
+            <h2>İşlem Silme Onayı</h2>
+            <p>
+              <strong>{transactionToDelete.aciklama}</strong> isimli işlemi
+              silmek istediğinize emin misiniz?
+            </p>
+
+            <div className="profile-modal-actions">
+              <button type="button" className="profile-modal-delete" onClick={handleConfirmDelete}>
+                Evet, Sil
+              </button>
+
+              <button
+                type="button"
+                className="profile-modal-cancel"
+                onClick={() => setTransactionToDelete(null)}
+              >
+                Vazgeç
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

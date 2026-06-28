@@ -1,8 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { clearError, register } from "../features/auth/authSlice";
 
 const Register = () => {
-   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const authError = useSelector((state) => state.auth.error);
+
+  const [ad, setAd] = useState("");
+  const [soyad, setSoyad] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordRepeat, setPasswordRepeat] = useState("");
+  const [isTermsAccepted, setIsTermsAccepted] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const errors = {};
+
+    if (!ad.trim()) errors.ad = "Ad alanı boş bırakılamaz.";
+    if (!soyad.trim()) errors.soyad = "Soyad alanı boş bırakılamaz.";
+    if (!email.trim()) errors.email = "E-posta alanı boş bırakılamaz.";
+    if (!password.trim()) errors.password = "Şifre alanı boş bırakılamaz.";
+    if (password !== passwordRepeat) errors.passwordRepeat = "Şifreler uyuşmuyor.";
+    if (!isTermsAccepted) errors.terms = "Devam etmek için koşulları kabul etmelisiniz.";
+
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length > 0) return;
+
+    dispatch(clearError());
+    dispatch(
+      register({
+        ad: ad.trim(),
+        soyad: soyad.trim(),
+        email: email.trim(),
+        password,
+      }),
+    );
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const newUser = users.find((user) => user.email === email.trim());
+
+    if (newUser) {
+      navigate("/login");
+    }
+  };
+
   return (
     <main className="register-page">
       <section className="register-card">
@@ -21,43 +68,59 @@ const Register = () => {
           <p>Finansal Geleceğini Şekillendir</p>
         </div>
 
-        <form className="register-form">
+        <form className="register-form" onSubmit={handleSubmit}>
           <div className="register-form-row">
             <div className="register-form-group">
               <label htmlFor="name">Ad</label>
-              <input id="name" type="text" />
+              <input id="name" type="text" value={ad} onChange={(e) => setAd(e.target.value)} />
+              {formErrors.ad && <p className="login-error">{formErrors.ad}</p>}
             </div>
 
             <div className="register-form-group">
               <label htmlFor="surname">Soyad</label>
-              <input id="surname" type="text" />
+              <input id="surname" type="text" value={soyad} onChange={(e) => setSoyad(e.target.value)} />
+              {formErrors.soyad && <p className="login-error">{formErrors.soyad}</p>}
             </div>
           </div>
 
           <div className="register-form-group">
             <label htmlFor="email">E-posta Adresi</label>
-            <input id="email" type="email" />
+            <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            {formErrors.email && <p className="login-error">{formErrors.email}</p>}
           </div>
 
           <div className="register-form-group">
             <label htmlFor="password">Şifre</label>
-            <input id="password" type="password" />
+            <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            {formErrors.password && <p className="login-error">{formErrors.password}</p>}
           </div>
 
           <div className="register-form-group">
             <label htmlFor="passwordRepeat">Şifre Tekrar</label>
-            <input id="passwordRepeat" type="password" />
+            <input
+              id="passwordRepeat"
+              type="password"
+              value={passwordRepeat}
+              onChange={(e) => setPasswordRepeat(e.target.value)}
+            />
+            {formErrors.passwordRepeat && <p className="login-error">{formErrors.passwordRepeat}</p>}
           </div>
 
           <label className="register-terms">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={isTermsAccepted}
+              onChange={(e) => setIsTermsAccepted(e.target.checked)}
+            />
             <span>
               Kullanım Koşulları ve Gizlilik Politikası’nı okudum, kabul
               ediyorum.
             </span>
           </label>
+          {formErrors.terms && <p className="login-error">{formErrors.terms}</p>}
+          {authError && <p className="login-error">{authError}</p>}
 
-          <button type="button" className="register-submit">
+          <button type="submit" className="register-submit">
             <span>Kayıt Ol</span>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M5 12H19" />
@@ -68,9 +131,9 @@ const Register = () => {
 
         <div className="register-login-link">
           <span>Zaten bir hesabınız var mı?</span>
-          <button type="button"
-          onClick={()=> navigate("/login")}
-          >Giriş Yap</button>
+          <button type="button" onClick={() => navigate("/login")}>
+            Giriş Yap
+          </button>
         </div>
       </section>
 

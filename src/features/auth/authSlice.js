@@ -22,12 +22,11 @@ const createUserId = (users) => {
   return `u${lastNumber + 1}`
 }
 
-// Başlangıç state'i tanımlanır.
 const initialState = {
-  currentUser: savedUser || null,       // Giriş yapan kullanıcı bilgisi tutulur.
-  users: savedUsers || usersData,       // Kullanıcı listesi önce localStorage'dan, yoksa json dosyasından gelir.
-  isAuthenticated: !!savedUser,         // Kullanıcının giriş yapıp yapmadığı kontrol edilir.
-  error: null,                          // Hata mesajı burada tutulur.
+  currentUser: savedUser || null,  // giriş yapan kullanıcı bilgisi
+  users: savedUsers || usersData, // kullanıcı bilgisi localstorage de yoksa jsondan gelir
+  isAuthenticated: !!savedUser,  //kullanıcının giriş yapıp yapmadığı kontrol edilir.
+  error: null, 
 }
 
 // Auth işlemleri için slice oluşturulur.
@@ -37,10 +36,9 @@ const authSlice = createSlice({
   initialState,
 
   reducers: {
-    // Kullanıcı giriş yaptığında çalışır.
     login: (state, action) => {
-      const { email, password } = action.payload
-
+      const { email, password } = action.payload //verileri aldık
+      //eşleşen kullanıcı kontrolü
       const user = state.users.find(
         (u) => u.email === email && u.password === password
       )
@@ -49,7 +47,7 @@ const authSlice = createSlice({
         state.currentUser = user
         state.isAuthenticated = true
         state.error = null
-
+        // kullanıcıyı localstorage ye kaydetme
         localStorage.setItem('currentUser', JSON.stringify(user))
       } else {
         state.currentUser = null
@@ -60,7 +58,7 @@ const authSlice = createSlice({
       }
     },
 
-    // Kullanıcı çıkış yaptığında çalışır.
+    // kullanıcı çıkış yaptığında çalışır
     logout: (state) => {
       state.currentUser = null
       state.isAuthenticated = false
@@ -92,20 +90,20 @@ const authSlice = createSlice({
       }
     },
 
-    // Giriş yapan kullanıcının profil bilgilerini günceller.
+    //  kullanıcının profil bilgilerini günceller.
     updateProfile: (state, action) => {
       if (!state.currentUser) return
-
+      //giriş yapan kullanıcı aranır
       const index = state.users.findIndex(
         (u) => u.id === state.currentUser.id
       )
-
+      //kullanıcıyı bulursa işlemi yapar
       if (index !== -1) {
         state.users[index] = {
           ...state.users[index],
           ...action.payload,
         }
-
+        // giriş yapan kullanıcı bilgileri de güncellenir
         state.currentUser = {
           ...state.currentUser,
           ...action.payload,
@@ -123,7 +121,7 @@ const authSlice = createSlice({
       const exists = state.users.find(
         (u) => u.email === action.payload.email
       )
-
+      // girilen eposta mevcut mu diye kontrol edilir
       if (exists) {
         state.error = 'Bu e-posta zaten kayıtlı.'
         return
@@ -180,6 +178,11 @@ const authSlice = createSlice({
 
     // Kullanıcı siler.
     deleteUser: (state, action) => {
+      if (state.currentUser && state.currentUser.id === action.payload) {
+        state.error = 'Kendi kullanıcınızı silemezsiniz.'
+        return
+      }
+
       state.users = state.users.filter((u) => u.id !== action.payload)
 
       if (state.currentUser && state.currentUser.id === action.payload) {

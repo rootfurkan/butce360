@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   addPayment,
   deletePayment,
@@ -25,6 +26,7 @@ const formatAmount = (amount) => {
 
 const AutoPayments = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const paymentList = useSelector((state) => state.payments.payments);
   const currentUser = useSelector((state) => state.auth.currentUser);
 
@@ -319,7 +321,9 @@ const AutoPayments = () => {
               abonelikleri azaltabilir ve aylık bütçenizi daha rahat yönetebilirsiniz.
             </p>
 
-            <button type="button">AI Raporunu İncele</button>
+            <button type="button" onClick={() => navigate("/ai-forecast")}>
+              AI Raporunu İncele
+            </button>
           </div>
         </section>
       </div>

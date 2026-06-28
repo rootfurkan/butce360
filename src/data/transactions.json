@@ -2353,7 +2353,7 @@
     "userId": "u2",
     "tur": "gelir",
     "kategori": "Maaş",
-    "tutar": 26500,
+    "tutar": 16500,
     "aciklama": "Ocak maaşı",
     "tarih": "2025-01-01"
   },
@@ -2362,7 +2362,7 @@
     "userId": "u2",
     "tur": "gider",
     "kategori": "Kira",
-    "tutar": 8600,
+    "tutar": 15600,
     "aciklama": "Ocak kirası",
     "tarih": "2025-01-02"
   },
@@ -4687,5 +4687,41 @@
     "tutar": 6300,
     "aciklama": "Ek gelir",
     "tarih": "2026-05-27"
+  },
+  {
+    "id": "t1",
+    "userId": "u1",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 35000,
+    "aciklama": "Haziran maaşı",
+    "tarih": "2026-06-01"
+  },
+    {
+    "id": "t1",
+    "userId": "u2",
+    "tur": "gelir",
+    "kategori": "Maaş",
+    "tutar": 40000,
+    "aciklama": "Haziran maaşı",
+    "tarih": "2026-06-01"
+  },
+    {
+    "id": "t519",
+    "userId": "u1",
+    "tur": "gider",
+    "kategori": "Mazot",
+    "tutar": 3200,
+    "aciklama": "Mazot dolduruldu",
+    "tarih": "2026-06-14"
+  },
+    {
+    "id": "t519",
+    "userId": "u2",
+    "tur": "gider",
+    "kategori": "Tamirat",
+    "tutar": 3500,
+    "aciklama": "Z rotları değiştirdim",
+    "tarih": "2026-06-25"
   }
 ]
