@@ -301,3 +301,5 @@ kullanıcı kendi finans verilerini görür
 - Normal kullanıcı sadece kendi profilini düzenleyebilir.
 - AI tahminleri Hugging Face API üzerinden alınır.
 - JSON dosyaları başlangıç verisi olarak kullanılır, gerçek backend gibi davranmaz.
+
+Demo Link : https://butce360.vercel.app/
